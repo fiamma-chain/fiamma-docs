@@ -33,15 +33,15 @@ description: >-
 * **Objective Nodes (PoS):**
   * **Begin Objective Finality:** The process to reach consensus on the submitted proofs begins.
   * **Consensus:** Nodes collaborate to validate the proof, ensuring its accuracy.
-  * **Send Hash, Proof Results, and Multi-Signatures:** The validated proof, along with hash and signatures, is sent to the Fiamma chain.
+  * **Send Hash, Proof Results, and Multi-Signatures:** The validated proof, along with hash and signatures, is sent to the DA module.
 * **Fiamma Chain:**
-  * **Return Commitment:** The chain returns the commitment to the ZK apps.
+  * **Return Commitment:** The chain returns the commitment to the data.
   * **Pre-Sign Asset Transaction:** Prepares to sign the asset transaction for further processing.
 
 **Step 3:Data Request and Proof Validation**
 
 * **ZK Apps:**
-  * **Request Merkle Proof:** Applications request the Merkle proof to verify the data.
+  * **Request Merkle Proof:** Applications request the Merkle proof to construct transactions sent to the L1 chain.
   * **Access Proofs:** The requested proofs are accessed for validation.
 * **Objective Nodes (PoS):**
   * **Provide Merkle Proof Request:** Nodes process the request for Merkle proofs.
@@ -49,18 +49,12 @@ description: >-
 * **Fiamma Chain:**
   * **Begin Intersubjective Finality:** The process for final validation involving intersubjective nodes **begins.**
 
-**Step 4: Verification and State Update**
+**Step 4: Intersubjective verification and hard Finality**
 
 * **Intersubjective Nodes (User):**
   * **Verify ZKP:** Nodes verify the Zero-Knowledge Proof.
   * **If Valid (Happy Path):** If the proof is valid, the result is marked as TRUE.
-  * **Collect Intersubjective Results:** The results from various nodes are collected to confirm the proof’s validity.
-* **Fiamma Chain:**
-  * **Send Commitments to Bitcoin:** Validated commitments are sent to the Bitcoin chain for recording.
-* **Bitcoin Chain:**
-  * **Record ZKP Commitments:** The Zero-Knowledge Proof commitments are recorded on the Bitcoin blockchain.
-* **Babylon Chain:**
-  * **Handle Staking and State Updates:** The chain manages staking operations and updates the state based on the verified proofs.
+  * **Collect Intersubjective Results:** The results from various nodes are collected to confirm the proof’s validity. if the number exceeds the threshold, the proof state will be updated to hard finality.
 
 **Step 5: Happy Path**&#x20;
 
