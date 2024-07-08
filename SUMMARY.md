@@ -12,5 +12,6 @@
   * [Fiamma Architecture](solution-overview/fiamma-architecture.md)
   * [Handling and Verification of Zero-Knowledge Proofs and Cross-Chain Interactions](solution-overview/handling-and-verification-of-zero-knowledge-proofs-and-cross-chain-interactions.md)
 * [Ecosystem Layout](ecosystem-layout.md)
+* [API](api.md)
 * [Roadmap](roadmap.md)
 * [FAQ](faq.md)
