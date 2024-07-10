@@ -24,3 +24,4 @@
   * [Set up a Node](developer-guides/set-up-a-node.md)
   * [Getting Testnet Tokens](developer-guides/getting-testnet-tokens.md)
   * [Become a Validator](developer-guides/become-a-validator.md)
+* [Support](support.md)
