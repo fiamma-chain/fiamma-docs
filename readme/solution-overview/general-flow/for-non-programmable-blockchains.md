@@ -1,6 +1,6 @@
 # For Non-Programmable Blockchains :
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Fig2. The general flow of applications on Bitcoin</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Fig2. The general flow of applications on Bitcoin</p></figcaption></figure>
 
 #### Components Involved:
 

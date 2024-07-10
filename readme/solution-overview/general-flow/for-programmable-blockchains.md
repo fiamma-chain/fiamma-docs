@@ -1,6 +1,6 @@
 # For Programmable Blockchains
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Fig1. The general flow of applications on Ethereum</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>Fig1. The general flow of applications on Ethereum</p></figcaption></figure>
 
 ### Components Involved:
 

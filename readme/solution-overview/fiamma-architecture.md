@@ -2,7 +2,7 @@
 
 The following diagram illustrates the comprehensive workflow of the Fiamma chain, highlighting the processes involved in handling and verifying Zero-Knowledge Proofs (ZKP) and the interactions between different blockchain networks. This diagram specifically demonstrates the relationships and interactions between the PoS chain, intersubjective nodes, BitVM2, Babylon, Bitcoin, and other blockchains.
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Fig3. The arvhitecture of Fiamma</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>Fig3. The arvhitecture of Fiamma</p></figcaption></figure>
 
 ### Components Involved:
 
