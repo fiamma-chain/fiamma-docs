@@ -6,7 +6,7 @@ description: >-
 
 # Installation
 
-### Step 1: Install Golang  <a href="#step-1-install-golang" id="step-1-install-golang"></a>
+### Step 1: Install Golang <a href="#step-1-install-golang" id="step-1-install-golang"></a>
 
 {% hint style="info" %}
 Fiamma requires Golang [version 1.22.3](https://go.dev/doc/install) for Fiamma to be installed on your system. Install it using the instructions on the provided link.
@@ -36,5 +36,5 @@ make install
 ```
 
 {% hint style="info" %}
-The last command first executes `git checkout` in the specific version that you want to install. Ensure that you install the same version of the Fiamma executable as the one that is running on the network you aim to join.
+Note! he last command first executes `git checkout` in the specific version that you want to install. Ensure that you install the same version of the Fiamma executable as the one that is running on the network you aim to join.
 {% endhint %}
