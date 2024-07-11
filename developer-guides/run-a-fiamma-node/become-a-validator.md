@@ -6,15 +6,15 @@ description: >-
 
 # Become a Validator
 
-### Prerequisites[​](https://docs.babylonchain.io/docs/user-guides/btc-staking-testnet/become-validator#prerequisites) <a href="#prerequisites" id="prerequisites"></a>
+## Prerequisites[​](https://docs.babylonchain.io/docs/user-guides/btc-staking-testnet/become-validator#prerequisites) <a href="#prerequisites" id="prerequisites"></a>
 
 Having a full [node setup ](set-up-a-node.md)and synced by following this guide
 
-### 1. Create a Keyring and Get Funds <a href="#id-1-create-a-keyring-and-get-funds" id="id-1-create-a-keyring-and-get-funds"></a>
+## 1. Create a Keyring and Get Funds <a href="#id-1-create-a-keyring-and-get-funds" id="id-1-create-a-keyring-and-get-funds"></a>
 
 The [Getting Testnet Tokens](getting-testnet-tokens.md) page contains detailed instructions on how to create a keyring and get funds for it through a faucet.
 
-### 2. Get Validator Key <a href="#id-1-create-a-keyring-and-get-funds" id="id-1-create-a-keyring-and-get-funds"></a>
+## 2. Get Validator Key <a href="#id-1-create-a-keyring-and-get-funds" id="id-1-create-a-keyring-and-get-funds"></a>
 
 You can get the validator key for the current node using the following command. You'll need to write it down. You'll need it next.
 
@@ -22,7 +22,7 @@ You can get the validator key for the current node using the following command. 
 fiammad tendermint show-validator
 ```
 
-### 3. Get Node Moniker <a href="#id-1-create-a-keyring-and-get-funds" id="id-1-create-a-keyring-and-get-funds"></a>
+## 3. Get Node Moniker <a href="#id-1-create-a-keyring-and-get-funds" id="id-1-create-a-keyring-and-get-funds"></a>
 
 You can get the node moniker for the current node using the following command. You'll need to write it down. You'll need it next.
 
@@ -30,7 +30,7 @@ You can get the node moniker for the current node using the following command. Y
 fiammad config get config moniker
 ```
 
-### 3. Create A Validator Config File <a href="#id-1-create-a-keyring-and-get-funds" id="id-1-create-a-keyring-and-get-funds"></a>
+## 4. Create A Validator Config File <a href="#id-1-create-a-keyring-and-get-funds" id="id-1-create-a-keyring-and-get-funds"></a>
 
 You can modify the information of your validator as you wish, the following is just an example
 
@@ -47,7 +47,7 @@ You can modify the information of your validator as you wish, the following is j
 EOF
 </code></pre>
 
-### 4. Staking And Become A Validator <a href="#id-1-create-a-keyring-and-get-funds" id="id-1-create-a-keyring-and-get-funds"></a>
+## 5. Staking And Become A Validator <a href="#id-1-create-a-keyring-and-get-funds" id="id-1-create-a-keyring-and-get-funds"></a>
 
 Now you can create a pledge transaction to complete the creation of the validator
 
@@ -55,7 +55,7 @@ Now you can create a pledge transaction to complete the creation of the validato
 fiammad tx staking create-validator ~/.fiamma/config/validator.json --from $KEYNAME --chain-id fiamma-testnet-1 --node "https://testnet-rpc.fiammachain.io/ --fees 2000ufia"
 ```
 
-### 5. Verify your Validator <a href="#id-5-verify-your-validator" id="id-5-verify-your-validator"></a>
+## 6. Verify your Validator <a href="#id-5-verify-your-validator" id="id-5-verify-your-validator"></a>
 
 To verify that you have become a validator, first find your validator address:
 

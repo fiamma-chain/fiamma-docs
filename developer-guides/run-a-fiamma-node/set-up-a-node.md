@@ -10,7 +10,7 @@ NOTE
 This guide requires having Fiamma installed on a Linux System. The instructions can be found on the Installation page The version to install is specified at the [fiamma-testnet-1 ](https://github.com/fiamma-chain/networks/tree/main/fiamma-testnet-1)network info page.
 {% endhint %}
 
-### System Requirements
+## System Requirements
 
 The following specifications have been found to work well:
 
@@ -19,12 +19,16 @@ The following specifications have been found to work well:
 * 1TB NVMe SSD Storage (disk i/o is crucial);
 * 100Mbps bi-directional Internet connection;
 
-### Initialize the Node Directory <a href="#id-1-initialize-the-node-directory" id="id-1-initialize-the-node-directory"></a>
+## Install Fiammad <a href="#id-1-initialize-the-node-directory" id="id-1-initialize-the-node-directory"></a>
+
+You can refer to the [installation page](../../user-guides/installation.md) to install the fiammad binary
+
+## Initialize the Node Directory <a href="#id-1-initialize-the-node-directory" id="id-1-initialize-the-node-directory"></a>
 
 First, initialize a node configuration directory under `~/.fiamma`. The `$NODENAME` variable specifies the name you aim to give your node.
 
 ```shell
-fiamma init $NODENAME --chain-id fiamma-testnet-1
+fiammad init $NODENAME --chain-id fiamma-testnet-1
 ```
 
 Then, retrieve the genesis file and place it in the node directory:
@@ -33,9 +37,9 @@ Then, retrieve the genesis file and place it in the node directory:
 wget https://raw.githubusercontent.com/fiamma-chain/networks/main/fiamma-testnet-1/genesis.json -O ~/.fiamma/config/genesis.json
 ```
 
-### Add Peers and Modify Configuration <a href="#id-2-add-peers-and-modify-configuration" id="id-2-add-peers-and-modify-configuration"></a>
+## Add Peers and Modify Configuration <a href="#id-2-add-peers-and-modify-configuration" id="id-2-add-peers-and-modify-configuration"></a>
 
-Edit the configuration file at `~/.fiamma/config/config.toml` and modify the `seeds` and `persistent_peers` attributes to contain appropriate seeds and peers of your choice. The full list of Fiamma approved seeds and peers can be found under the [fiamma-testnet-1 ](https://github.com/fiamma-chain/networks/tree/main/fiamma-testnet-1) network info page.
+Edit the configuration file at `~/.fiamma/config/config.toml` and modify the `seeds` and `persistent_peers` attributes to contain appropriate seeds and peers of your choice. The full list of Fiamma approved seeds and peers can be found under the [fiamma-testnet-1 ](https://github.com/fiamma-chain/networks/tree/main/fiamma-testnet-1)network info page.
 
 ```toml
 
@@ -52,7 +56,7 @@ Edit the configuration file at `~/.babylond/config/app.toml` and modify the `min
 minimum-gas-prices = "0.00001ufia"
 ```
 
-### Setup Cosmovisor <a href="#id-3-setup-cosmovisor" id="id-3-setup-cosmovisor"></a>
+## Setup Cosmovisor <a href="#id-3-setup-cosmovisor" id="id-3-setup-cosmovisor"></a>
 
 Cosmovisor is a tool for automating the management of Cosmos SDK application binary files. It simplifies the process of upgrading and rolling back chains.
 
@@ -100,7 +104,7 @@ WantedBy=multi-user.target
 EOF
 ```
 
-### Start the Node <a href="#id-4-start-the-node" id="id-4-start-the-node"></a>
+## Start the Node <a href="#id-4-start-the-node" id="id-4-start-the-node"></a>
 
 ```bash
 sudo -S systemctl daemon-reload

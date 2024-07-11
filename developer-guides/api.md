@@ -1,107 +1,33 @@
-# API
+---
+description: >-
+  The following API's are recommended for development purposes. For maximum
+  control and reliability it's recommended to run your own node.
+---
 
-The following API's are recommended for development purposes. For maximum control and reliability it's recommended to run your own node.
+# Fiamma ZKPVerfiy APIs
 
-## Networks
+## Network
 
-Quickly connect your app or client to Fiamma public testnets. You can use [Networks](https://testnet-api.fiammachain.io/) to connect to the Fiamma.
+Quickly connect your app or client to Fiamma public testnets. You can check the [**network**](network-information.md) page for information about the current test network
 
-## Clients
+## RPC And APIs
 
-The Fiamma Network supports different clients in order to support Cosmos and Fiamma transactions and queries. You can use Swagger as a REST interface for state queries and transactions:
+The Fiamma RPC interface includes basic query interfaces for the Tendermint consensus, and the API includes basic interfaces related to Cosmos, as well as interfaces for the unique **zkpverify module** of the Fiamma network.
 
-|                                                                                  | Description                                                                          | Default Port | Swagger                                                             |
-| -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------ | ------------------------------------------------------------------- |
-| **Cosmos REST** | Query or send Fiamma transactions using an HTTP RESTful API                           | `1317`       | [Testnet](https://testnet-api.fiammachain.io/) |                                                                    |
-| **Tendermint [RPC](#tendermint-rpc)**                                            | Query transactions, blocks, consensus state, broadcast transactions, etc.            | `26657`      | [Localhost](http://127.0.0.1:26657)                 |                                                                    |
-| **Command Line Interface (CLI)**                     | Query or send Fiamma transactions using your Terminal or Console.                     | N/A          |                                                                     |
+| Name                | Description                                                               | Default Port | Link                                                                       |
+| ------------------- | ------------------------------------------------------------------------- | ------------ | -------------------------------------------------------------------------- |
+| **Fiamma Rest API** | Query or send Fiamma transactions using an HTTP RESTful API               | `1317`       | [https://testnet-api.fiammachain.io/](https://testnet-api.fiammachain.io/) |
+| **Fiamma RPC**      | Query transactions, blocks, consensus state, broadcast transactions, etc. | `26657`      | [https://testnet-rpc.fiammachain.io/](https://testnet-rpc.fiammachain.io/) |
 
-### CLI
-Note that the cli here refers to transactions and queries in the fiamma verification network and doesn't include the regular cosmos application chain.
+### RPC-Msg
 
-Use cli tools `fiammd` you can send transactions with `tx zkpverify [command] [flags]` and queries with `tx zkpverify query [command] [flags]`. 
+Fiamma's RPC message modules all start with **/fiamma.zkpverify.Msg/**,  followed by the message name. These requests are all **POST** requests
 
-Global Flags usually contains: `--from`, `--chain-id`, `--gas`, `--node`, `--keyring-backend`.
+### RPC-Query&#x20;
 
-command currently support: 
-- `submit-proof` and `submit-community-verification` for send transaction (POST). 
-- `get-proof-data`, `get-bitvm-witness` and `pending-proof` for queries (GET).
+Fiamma's RPC query modules all start with **/fiamma.zkpverify/**, followed by the query name. These requests are all **GET** requests
 
-**submit-proof**
-A (zkpverify) operation for verifying a proof by proof_system, proof, public_input and vk.
+### Proto Buff
 
-request params:
-```
-{
-  "proof_system": "string",
-  "proof": "string",
-  "public_input": "string",
-  "vk": "string"
-}
-```
-**submit-community-verification**
-A community (zkpverify) operation for verifying a proof by proof_id and verify_result.
-request params:
-```
-{
-  "proof_id": "string",
-  "verify_result": bool
-}
-```
-**get-bitvm-witness**
-Query bitVM witness stored in the fiamma by proof_id.
-request params:
-```
-{
-  "proof_id": "string",
-}
-```
-response:
-```
-{
-  "witness": "string"
-}
-```
-**get-proof-data**
-Query Proof data stored in the fiamma by proof_id.
-request params:
-```
-{
-  "proof_id": "string",
-}
-```
+All messages and queries of the fiamma network are defined in proto buff files, which can be found in [**buf.build**](https://buf.build/fiamma-chain/fiamma/tree/main:fiamma/zkpverify).
 
-response:
-```
-{
-  "proof_data": {
-    "proof_system": "string",
-    "proof": "string",
-    "public_input": "string",
-    "vk": "string"
-  }
-}
-```
-**pending-proof**
-Queries a list of pending proof verification items.
-response:
-```
-{
-  "pending_proofs": [
-    {
-      "proof_id": "string",
-      "proof_system": "string",
-      "data_commitment": "string",
-      "data_location": "string",
-      "result": bool,
-      "status": "string",
-      "community_verification_count": "string"
-    },
-    ...
-  ],
-  "pagination": {
-    "next_key": "string",
-    "total": "string"
-  }
-}
-```
