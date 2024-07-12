@@ -189,7 +189,6 @@ You can query proof data stored in the fiamma network by proof id.
 fiammad query zkpverify get-proof-data \
   --chain-id <chain_id>  \
   --node <node> \
-  --keyring-backend test \
   <proof_id>
 ```
 
@@ -199,7 +198,6 @@ fiammad query zkpverify get-proof-data \
 fiammad query zkpverify get-proof-data \
   --chain-id fiamma-testnet-1  \
   --node https://testnet-rpc.fiammachain.io \
-  --keyring-backend test \
   8c467c816348fa2c44686624b558b71fb139cc30b6b2642298d6696f91adc189
 ```
 
@@ -211,7 +209,6 @@ You can query bitVM witness stored in the fiamma network by proof id.
 fiammad query zkpverify get-bitvm-witness \
   --chain-id <chain_id>  \
   --node <node> \
-  --keyring-backend test \
   <proof_id>
 ```
 
@@ -221,7 +218,6 @@ fiammad query zkpverify get-bitvm-witness \
 fiammad query zkpverify get-bitvm-witness \
   --chain-id fiamma-testnet-1  \
   --node https://testnet-rpc.fiammachain.io \
-  --keyring-backend test \
   4792ef5c0e3fafbae94dcbb068dc4c5bf8718584c2266895547c75653bb60c30
 ```
 
@@ -233,7 +229,6 @@ You can query proof verify status stored in the fiamma network by proof id.
 fiammad query zkpverify get-verify-result \
   --chain-id <chain_id>  \
   --node <node> \
-  --keyring-backend test \
   <proof_id>
 ```
 
@@ -243,7 +238,6 @@ fiammad query zkpverify get-verify-result \
 fiammad query zkpverify get-verify-result \
   --chain-id fiamma-testnet-1  \
   --node https://testnet-rpc.fiammachain.io \
-  --keyring-backend test \
   8c467c816348fa2c44686624b558b71fb139cc30b6b2642298d6696f91adc189
 ```
 
@@ -254,8 +248,7 @@ You can queries a list of pending proof verification items in teh fiamma network
 ```
 fiammad query zkpverify pending-proof \
   --chain-id <chain_id>  \
-  --node <node> \
-  --keyring-backend test
+  --node <node>
 ```
 
 **Example**
@@ -263,6 +256,5 @@ fiammad query zkpverify pending-proof \
 ```
 fiammad query zkpverify pending-proof \
   --chain-id fiamma-testnet-1  \
-  --node https://testnet-rpc.fiammachain.io \
-  --keyring-backend test
+  --node https://testnet-rpc.fiammachain.io
 ```
