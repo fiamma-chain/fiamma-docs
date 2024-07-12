@@ -10,7 +10,7 @@ description: >-
 Note! that the cli here refers to transactions and queries in the fiamma verification network and doesn't include the regular cosmos application chain.
 {% endhint %}
 
-Use cli tools `fiammad` you can send transactions with `tx zkpverify [command] [flags]` and queries with `zkpverify query [command] [flags]`.
+Use cli tools `fiammad` you can send transactions with `tx zkpverify [command] [flags]` and queries with `query zkpverify [command] [flags]`.
 
 Global Flags usually contains: `--from`, `--chain-id`, `--gas`, `--node`, `--keyring-backend`.
 
