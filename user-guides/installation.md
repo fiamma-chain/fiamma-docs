@@ -12,10 +12,20 @@ description: >-
 Fiamma requires Golang [version 1.22.3](https://go.dev/doc/install) for Fiamma to be installed on your system. Install it using the instructions on the provided link.
 {% endhint %}
 
+```bash
+wget https://golang.org/dl/go1.22.3.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.22.3.linux-amd64.tar.gz
+echo 'export GOROOT=/usr/local/go' >> ~/.profile
+echo 'export GOPATH=$HOME/go' >> ~/.profile
+echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> ~/.profile
+source ~/.profile
 ```
-$ go version
-go version go1.22.3 linux/amd64
-```
+
+After executing the above commands, you should check that the version of go is the same as the required version.
+
+<pre class="language-bash"><code class="lang-bash"><strong>$ go version
+</strong>go version go1.22.3 linux/amd64
+</code></pre>
 
 ### Step 2: Build and Install Fiamma <a href="#step-1-install-golang" id="step-1-install-golang"></a>
 
@@ -23,16 +33,22 @@ You need to clone Fiamma’s GitHub repository to install the `fiammad` executab
 
 1. Install build requirements
 
-```
+```bash
 sudo apt-get install -y make git bash gcc curl jq pkg-config openssl libssl-dev
 ```
 
 2. Retrieve the Fiamma source code either through the [releases page](https://github.com/fiamma-chain/fiamma/releases) or by cloning the [source code](https://github.com/fiamma-chain/fiamma).
 3. Navigate to the directory that contains the Fiamma source code. From there build and install the fiammad executable
 
-```
+```bash
 git checkout <version_to_install>
 make install
+```
+
+4. Check fiammad command
+
+```bash
+$ fiammad version
 ```
 
 {% hint style="info" %}
