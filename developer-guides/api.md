@@ -14,11 +14,11 @@ Quickly connect your app or client to Fiamma public testnets. You can check the 
 
 The Fiamma RPC interface includes basic query interfaces for the Tendermint consensus, and the API includes basic interfaces related to Cosmos, as well as interfaces for the unique **zkpverify module** of the Fiamma network.
 
-| Name                | Description                                                                                                            | Link                                                                        |
-| ------------------- | ---------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| **Fiamma Rest API** | Query or send Fiamma transactions using an HTTP restful API                                                            | [https://testnet-api.fiammachain.io/](https://testnet-api.fiammachain.io/)  |
-| **Fiamma RPC**      | Query transactions, blocks, consensus state, broadcast transactions, etc.                                              | [https://testnet-rpc.fiammachain.io/](https://testnet-rpc.fiammachain.io/)  |
-| **FIamma GRPC**     | Using a predefined proto data structure, grpc requests can be sent to the fiamma network for transactions and queries. | [https://testnet-grpc.fiammachain.io/](https://testnet-rpc.fiammachain.io/) |
+| Name                | Description                                                                                                            | Link                                                                       |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| **Fiamma Rest API** | Query or send Fiamma transactions using an HTTP restful API                                                            | [https://testnet-api.fiammachain.io/](https://testnet-api.fiammachain.io/) |
+| **Fiamma RPC**      | Query transactions, blocks, consensus state, broadcast transactions, etc.                                              | [https://testnet-rpc.fiammachain.io/](https://testnet-rpc.fiammachain.io/) |
+| **FIamma GRPC**     | Using a predefined proto data structure, grpc requests can be sent to the fiamma network for transactions and queries. | [testnet-grpc.fiammachain.io:443](https://testnet-grpc.fiammachain.io)     |
 
 ## Rest API  Info
 
