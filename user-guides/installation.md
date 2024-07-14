@@ -12,7 +12,9 @@ description: >-
 Fiamma requires Golang [version 1.22.3](https://go.dev/doc/install) for Fiamma to be installed on your system. Install it using the instructions on the provided link.
 {% endhint %}
 
-```bash
+For Linux server installation of Go language, you can refer to the commands below, and for installation tutorials of Go language on other operating systems, you can refer to the official[ Go language documentation.](https://go.dev/doc/install)
+
+```
 wget https://golang.org/dl/go1.22.3.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.22.3.linux-amd64.tar.gz
 echo 'export GOROOT=/usr/local/go' >> ~/.profile
