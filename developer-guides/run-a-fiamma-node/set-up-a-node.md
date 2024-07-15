@@ -44,10 +44,10 @@ Edit the configuration file at `~/.fiamma/config/config.toml` and modify the `se
 ```toml
 
 # Comma separated list of seed nodes to connect to
-seeds = "7f3988dc1f6254e664119d24b52982031e34327b@35.73.202.182:26656,40449ad696760c0d1b675c2741e846b5d08235a3@18.182.20.173:26656"
+seeds = "5d6828849a45cf027e035593d8790bc62aca9cef@18.182.20.173:26656,526d13f3ce3e0b56fa3ac26a48f231e559d4d60c@35.73.202.182:26656"
 
 # Comma separated list of nodes to keep persistent connections to
-persistent_peers = "7f3988dc1f6254e664119d24b52982031e34327b@35.73.202.182:26656,40449ad696760c0d1b675c2741e846b5d08235a3@18.182.20.173:26656"
+persistent_peers = "5d6828849a45cf027e035593d8790bc62aca9cef@18.182.20.173:26656,526d13f3ce3e0b56fa3ac26a48f231e559d4d60c@35.73.202.182:26656"
 ```
 
 Edit the configuration file at `~/.babylond/config/app.toml` and modify the `minimum-gas-prices` attribute and set it to a value of your choosing. For example
