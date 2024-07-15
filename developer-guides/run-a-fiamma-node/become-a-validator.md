@@ -16,15 +16,14 @@ The [Getting Testnet Tokens](getting-testnet-tokens.md) page contains detailed i
 
 ## 2. Get Validator Key <a href="#id-1-create-a-keyring-and-get-funds" id="id-1-create-a-keyring-and-get-funds"></a>
 
-You can get the validator key for the current node using the following command. You'll need to write it down. You'll need it next.
+You can get the validator **pubkey** for the current node using the following command. You'll need to write it down. It will be needed next when creating the validator json file
 
-```bash
-fiammad tendermint show-validator
-```
+<pre class="language-bash"><code class="lang-bash"><strong>fiammad tendermint show-validator
+</strong></code></pre>
 
 ## 3. Get Node Moniker <a href="#id-1-create-a-keyring-and-get-funds" id="id-1-create-a-keyring-and-get-funds"></a>
 
-You can get the node moniker for the current node using the following command. You'll need to write it down. You'll need it next.
+You can get the node moniker for the current node using the following command. You'll need to write it down. It will be needed next when creating the validator json file
 
 ```bash
 fiammad config get config moniker
@@ -34,11 +33,15 @@ fiammad config get config moniker
 
 You can modify the information of your validator as you wish, the following is just an example
 
+You can find the **pubkey** by [Get Validator Key](become-a-validator.md#id-1-create-a-keyring-and-get-funds-1).
+
+You can find the **moniker** by [Get Node Moniker](become-a-validator.md#id-1-create-a-keyring-and-get-funds-2)
+
 <pre class="language-bash"><code class="lang-bash">cat &#x3C;&#x3C; EOF > ~/.fiamma/config/validator.json
 {
-	"pubkey": {"@type":"/cosmos.crypto.ed25519.PubKey","key":"awLUxRg/gS93ARZtFZO9hUpPOsAgh+sco1wxSymQW44="},
+	"pubkey": "<a data-footnote-ref href="#user-content-fn-1">GET_PUB_KEY</a>",
 	"amount": "100000ufia",
-	"moniker": <a data-footnote-ref href="#user-content-fn-1">mynode</a>,
+	"moniker": "<a data-footnote-ref href="#user-content-fn-2">GET_NODE_MONIKER</a>",
 	"commission-rate": "0.1",
 	"commission-max-rate": "0.2",
 	"commission-max-change-rate": "0.01",
@@ -52,7 +55,7 @@ EOF
 Now you can create a pledge transaction to complete the creation of the validator
 
 ```bash
-fiammad tx staking create-validator ~/.fiamma/config/validator.json --from $KEYNAME --chain-id fiamma-testnet-1 --node "https://testnet-rpc.fiammachain.io/ --fees 2000ufia"
+fiammad tx staking create-validator ~/.fiamma/config/validator.json --from $KEYNAME --keyring-backend test --chain-id fiamma-testnet-1 --node "https://testnet-rpc.fiammachain.io/" --fees 2000ufia
 ```
 
 ## 6. Verify your Validator <a href="#id-5-verify-your-validator" id="id-5-verify-your-validator"></a>
@@ -71,4 +74,6 @@ fiammad query staking validator $ADDR
 
 If all goes well, you should see a response indicating the parameters that you specified on the create-validator transaction.
 
-[^1]: moniker
+[^1]: 
+
+[^2]: 
