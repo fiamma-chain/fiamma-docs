@@ -41,7 +41,7 @@ You can find the **moniker** by [Get Node Moniker](become-a-validator.md#id-1-cr
 cat << EOF > ~/.fiamma/config/validator.json
 {
 	"pubkey": {"@type":"/cosmos.crypto.ed25519.PubKey","key":"QiZohv1ATkoaiBvH3aKNryXIw5026xHZAWuqOuR0rWQ="},
-	"amount": "100000ufia",
+	"amount": "1000000ufia",
 	"moniker": "test-node",
 	"commission-rate": "0.1",
 	"commission-max-rate": "0.2",
