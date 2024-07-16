@@ -95,9 +95,9 @@ fiammad tx zkpverify submit-proof \
   --node https://testnet-rpc.fiammachain.io \
   --keyring-backend test \
   "PLONK_BN254" \
-  cat $(./prover_examples/gnark_plonk/example/proof) \
-  cat $(./prover_examples/gnark_plonk/example/public_input) \
-  cat $(./prover_examples/gnark_plonk/example/vk)
+  $(cat ./prover_examples/gnark_plonk/example/proof) \
+  $(cat ./prover_examples/gnark_plonk/example/public_input) \
+  $(cat ./prover_examples/gnark_plonk/example/vk)
 ```
 
 Or proof system use **PLONK\_BLS12\_381**.
@@ -109,9 +109,9 @@ fiammad tx zkpverify submit-proof \
   --node https://testnet-rpc.fiammachain.io \
   --keyring-backend test \
   "PLONK_BLS12_381" \
-  cat $(./prover_examples/gnark_plonk/example/proof) \
-  cat $(./prover_examples/gnark_plonk/example/public_input) \
-  cat $(./prover_examples/gnark_plonk/example/vk)
+  $(cat ./prover_examples/gnark_plonk/example/proof) \
+  $(cat ./prover_examples/gnark_plonk/example/public_input) \
+  $(cat ./prover_examples/gnark_plonk/example/vk)
 ```
 
 ### BitVM proof
