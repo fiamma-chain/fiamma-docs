@@ -37,18 +37,19 @@ You can find the **pubkey** by [Get Validator Key](become-a-validator.md#id-1-cr
 
 You can find the **moniker** by [Get Node Moniker](become-a-validator.md#id-1-create-a-keyring-and-get-funds-2)
 
-<pre class="language-bash"><code class="lang-bash">cat &#x3C;&#x3C; EOF > ~/.fiamma/config/validator.json
+```bash
+cat << EOF > ~/.fiamma/config/validator.json
 {
-	"pubkey": "<a data-footnote-ref href="#user-content-fn-1">GET_PUB_KEY</a>",
+	"pubkey": {"@type":"/cosmos.crypto.ed25519.PubKey","key":"QiZohv1ATkoaiBvH3aKNryXIw5026xHZAWuqOuR0rWQ="},
 	"amount": "100000ufia",
-	"moniker": "<a data-footnote-ref href="#user-content-fn-2">GET_NODE_MONIKER</a>",
+	"moniker": "test-node",
 	"commission-rate": "0.1",
 	"commission-max-rate": "0.2",
 	"commission-max-change-rate": "0.01",
 	"min-self-delegation": "1"
 }
 EOF
-</code></pre>
+```
 
 ## 5. Staking And Become A Validator <a href="#id-1-create-a-keyring-and-get-funds" id="id-1-create-a-keyring-and-get-funds"></a>
 
@@ -63,7 +64,7 @@ fiammad tx staking create-validator ~/.fiamma/config/validator.json --from $KEYN
 To verify that you have become a validator, first find your validator address:
 
 ```bash
-fiammad keys show $KEYNAME -a --bech val
+fiammad keys show $KEYNAME --keyring-backend test -a --bech val
 ```
 
 where `$KEYNAME` is the name of the key that you used for the self-delegation (e.g. `my-key` on our example). This will return an address which you can use as the `$ADDR` variable to perform the following query:
@@ -73,7 +74,3 @@ fiammad query staking validator $ADDR
 ```
 
 If all goes well, you should see a response indicating the parameters that you specified on the create-validator transaction.
-
-[^1]: 
-
-[^2]: 
