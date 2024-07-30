@@ -24,6 +24,7 @@
   * [Run a Fiamma Node](developer-guides/run-a-fiamma-node/README.md)
     * [Set up a Node](developer-guides/run-a-fiamma-node/set-up-a-node.md)
     * [Getting Testnet Tokens](developer-guides/run-a-fiamma-node/getting-testnet-tokens.md)
+    * [Become a BitVM Staker](developer-guides/run-a-fiamma-node/become-a-bitvm-staker.md)
     * [Become a Validator](developer-guides/run-a-fiamma-node/become-a-validator.md)
   * [Rest API And GRPC](developer-guides/api.md)
   * [Fiamma ZKPVerify SDK](developer-guides/fiamma-zkpverify-sdk.md)

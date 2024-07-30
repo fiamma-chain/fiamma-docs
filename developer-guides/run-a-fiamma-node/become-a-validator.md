@@ -51,7 +51,11 @@ cat << EOF > ~/.fiamma/config/validator.json
 EOF
 ```
 
-## 5. Staking And Become A Validator <a href="#id-1-create-a-keyring-and-get-funds" id="id-1-create-a-keyring-and-get-funds"></a>
+## 5. Register BitVM Staker <a href="#id-1-create-a-keyring-and-get-funds" id="id-1-create-a-keyring-and-get-funds"></a>
+
+Now you should lock some BTC and register as a BitVM Staker, see [Become a BitVM Staker](become-a-bitvm-staker.md) section for more information.
+
+## 6. Become A Validator <a href="#id-1-create-a-keyring-and-get-funds" id="id-1-create-a-keyring-and-get-funds"></a>
 
 Now you can create a pledge transaction to complete the creation of the validator
 
@@ -59,7 +63,7 @@ Now you can create a pledge transaction to complete the creation of the validato
 fiammad tx staking create-validator ~/.fiamma/config/validator.json --from $KEYNAME --keyring-backend test --chain-id fiamma-testnet-1 --node "https://testnet-rpc.fiammachain.io/" --fees 2000ufia
 ```
 
-## 6. Verify your Validator <a href="#id-5-verify-your-validator" id="id-5-verify-your-validator"></a>
+## 7. Verify your Validator <a href="#id-5-verify-your-validator" id="id-5-verify-your-validator"></a>
 
 To verify that you have become a validator, first find your validator address:
 
