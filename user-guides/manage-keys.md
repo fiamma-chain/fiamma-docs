@@ -6,17 +6,17 @@ description: >-
 
 # Manage Keys
 
-## Add Kyes <a href="#list-keys" id="list-keys"></a>
+## Add Keys <a href="#list-keys" id="list-keys"></a>
 
 {% hint style="info" %}
-Note!  Once your account is created, you must keep your mnemonic phrase safe. If you lose it, you will also lose your assets.
+Note! Once your account is created, you must keep your mnemonic phrase safe. If you lose it, you will also lose your assets.
 {% endhint %}
 
 ```bash
 fiammad keys add <key-name> --keyring-backend=test
 ```
 
-A fiamma address named with test-alice will be automatically generated such as:
+A fiamma address will be automatically generated such as:
 
 ```json
 
@@ -27,6 +27,23 @@ A fiamma address named with test-alice will be automatically generated such as:
 
 ```
 
+## Recover keys  <a href="#list-keys" id="list-keys"></a>
+
+```
+fiammad keys add <key-name> --keyring-backend=test --recover
+```
+
+After executing the above command, you will be prompted to enter a mnemonic in the bip39 format
+
+After bip39 mnemonic inputed, a fiamma address will be automatically generated such as:
+
+```json
+- address: fiammaXXX
+  name: test-alice
+  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"XXX"}'
+  type: local
+```
+
 ## List Keys <a href="#list-keys" id="list-keys"></a>
 
 You can use the command below to view the account you just created.
@@ -35,7 +52,7 @@ You can use the command below to view the account you just created.
 fiammad keys list --keyring-backend=test
 ```
 
-A fiamma address named with test-alice will be automatically  show such as:
+A fiamma address named with test-alice will be automatically show such as:
 
 ```
 - address: fiammaXXX
@@ -66,4 +83,4 @@ Use Recovery Phrase or Private Key to Import Keys into Keplr Wallet:
 
 Set a custom name for your wallet, select "**Fiamma Testnet**" Chain and confirm. Your Fiamma address will now appear in the Keplr wallet extension, ready for receive and send transactions. For more faucet details, please refer to [Get FIA](wallet-and-tokens/#get-fia).
 
-\
+\\
