@@ -2,7 +2,7 @@
 description: >-
   Before becoming a validator on the fiamma network, you should register your
   validator address with the committee program, so that your validator address
-  is allowed to join the network and become an ou
+  is allowed to join the network
 ---
 
 # Become a Bitvm Staker
