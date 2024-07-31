@@ -10,11 +10,13 @@ description: >-
 
 Having a full [node setup ](set-up-a-node.md)and synced by following this guide
 
+You need to [register your validator ](become-a-bitvm-staker.md)address as a bitvm staker, so that you can continue with the registration process.
+
 ## 1. Create a Keyring and Get Funds <a href="#id-1-create-a-keyring-and-get-funds" id="id-1-create-a-keyring-and-get-funds"></a>
 
 The [Getting Testnet Tokens](getting-testnet-tokens.md) page contains detailed instructions on how to create a keyring and get funds for it through a faucet.
 
-## 2. Get Validator Key <a href="#id-1-create-a-keyring-and-get-funds" id="id-1-create-a-keyring-and-get-funds"></a>
+## 2. Get Validator Pub Key <a href="#id-1-create-a-keyring-and-get-funds" id="id-1-create-a-keyring-and-get-funds"></a>
 
 You can get the validator **pubkey** for the current node using the following command. You'll need to write it down. It will be needed next when creating the validator json file
 
@@ -59,15 +61,18 @@ Now you can create a pledge transaction to complete the creation of the validato
 fiammad tx staking create-validator ~/.fiamma/config/validator.json --from $KEYNAME --keyring-backend test --chain-id fiamma-testnet-1 --node "https://testnet-rpc.fiammachain.io/" --fees 2000ufia
 ```
 
-## 6. Verify your Validator <a href="#id-5-verify-your-validator" id="id-5-verify-your-validator"></a>
+## 6. Show Your Validator Addr <a href="#id-5-verify-your-validator" id="id-5-verify-your-validator"></a>
 
-To verify that you have become a validator, first find your validator address:
+You can get your validator address with the following command
 
-```bash
-fiammad keys show $KEYNAME --keyring-backend test -a --bech val
-```
+<pre class="language-bash"><code class="lang-bash"><strong>fiammad keys show $KEYNAME --keyring-backend test -a --bech val
+</strong></code></pre>
 
-where `$KEYNAME` is the name of the key that you used for the self-delegation (e.g. `my-key` on our example). This will return an address which you can use as the `$ADDR` variable to perform the following query:
+where `$KEYNAME` is the name of the key that you used for the self-delegation (e.g. `my-key` on our example).&#x20;
+
+## 7. Query Your Validator staking <a href="#id-5-verify-your-validator" id="id-5-verify-your-validator"></a>
+
+Use the above command to get the validator address, then you can check if your validator is staking successfully
 
 ```bash
 fiammad query staking validator $ADDR

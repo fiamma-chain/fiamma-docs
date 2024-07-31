@@ -1,12 +1,17 @@
-# Become a BitVM Staker
+---
+description: >-
+  Before becoming a validator on the fiamma network, you should register your
+  validator address with the committee program, so that your validator address
+  is allowed to join the network and become an ou
+---
 
-To register as a BitVM staker, follow the steps below.&#x20;
+# Become a Bitvm Staker
 
 ## Prerequisites
 
 This guide assumes you have some familiarity with Bitcoin wallets and general Bitcoin usage. For example, know what UTXO is, Bitcoin RPC service etc, for more information, please see [bitcoin developer reference](https://developer.bitcoin.org/reference/rpc/index.html).
 
-Ensure you have Rust installed on your system. You can download and install Rust from the official [Rust website](https://www.rust-lang.org/).
+Ensure you have Rust installed on your system. You can [**install Rust**](https://www.rust-lang.org/learn/get-started) from the official Rust website[.](https://www.rust-lang.org/learn/get-started)
 
 ## Step 1: Clone the Repository
 
@@ -60,7 +65,7 @@ Replace `network` `<validator_key>`, `<txid>`, `<vout>`, `<private-key>`, `<rpc-
 
 * `-n`: Specifies the committee service network and Bitcoin RPC service. It can be `local` for local testing or `dev` for the testnet, or `main` for the mainnet.
 * `register`: The subcommand used to register.
-* `-v`: Specifies the Fiamma `validator_key`. Ensure the format is correct. Refer to [Verify Validator](become-a-validator.md#id-5-verify-your-validator) section on obtaining the `validator_key`. The validator key should have a prefix of `fiammavaloper`.
+* `-v`: Specifies the Fiamma `validator_key`. Ensure the format is correct. Refer to [Show your  Validator Addr ](become-a-validator.md#id-5-verify-your-validator)section on obtaining the `validator_key`. The validator key should have a prefix of `fiammavaloper`.
 * `-t`: Specifies the transaction ID of a UTXO in Bitcoin we did in step 3. This transaction must be associated with the private key specified by `-s`.
 * `-o`: Specifies which output of the UTXO to use as we did in step 3, e.g., `0`.
 * `-s`: Specifies the private key of Bitcoin account.
@@ -76,4 +81,4 @@ You have submitted your registration application.
 The registration number is 6, please wait patiently.
 ```
 
-Now the Bitcoin transaction is staked, we have successfully register validator\_key as BitVM staker.&#x20;
+Now the Bitcoin transaction is staked, we have successfully register validator\_key as BitVM staker.
