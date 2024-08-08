@@ -1,10 +1,10 @@
 ---
 description: >-
-  The token symbol for the Fiamma testnet is FIA, and the token's denom value is
-  ufia .                            1FIA = 1_000_000 ufia
+  The token symbol for the Fiamma testnet is $FIA, and the token's denom value
+  is ufia .                            1FIA = 1_000_000 ufia
 ---
 
-# Get FIA
+# Get $FIA
 
 Get your testnet token FIA for development and testing
 
