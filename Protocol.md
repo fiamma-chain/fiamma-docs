@@ -1,13 +1,6 @@
----
-description: >-
-  The following diagram illustrates the comprehensive workflow of the Fiamma
-  chain, highlighting the processes involved in handling and verifying
-  Zero-Knowledge Proofs (ZKP) and the interactions between
----
+# Protocol Overflow
 
-# Handling and Verification of Zero-Knowledge Proofs and Cross-Chain Interactions
-
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Fig4. Sequence diagram for the Fiamma network</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption><p>Fig4. Sequence diagram for the Fiamma network</p></figcaption></figure>
 
 ## Components
 
@@ -56,7 +49,7 @@ description: >-
   * **If Valid (Happy Path):** If the proof is valid, the result is marked as TRUE.
   * **Collect Intersubjective Results:** The results from various nodes are collected to confirm the proof’s validity. if the number exceeds the threshold, the proof state will be updated to hard finality.
 
-**Step 5: Happy Path**&#x20;
+**Step 5: Happy Path**
 
 * **Intersubjective Nodes (User):**
   * **Send Results if TRUE:** If the proof is valid, the results are sent as TRUE.
