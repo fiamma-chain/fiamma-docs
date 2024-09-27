@@ -1,16 +1,16 @@
 ---
 description: >-
-  In this tutorial, you will learn about the command line introduction related
+  In this tutorial, you will learn about the Command Line Interface(CLI) introduction related
   to fiammad zkpverify.
 ---
 
 # CLI Command Overview
 
 {% hint style="info" %}
-Note! that the cli here refers to transactions and queries in the fiamma verification network and doesn't include the regular cosmos application chain.
+Note! that the CLI here refers to transactions and queries in the fiamma verification network and doesn't include the regular cosmos application chain.
 {% endhint %}
 
-Use cli tools `fiammad` you can send transactions with `tx zkpverify [command] [flags]` and queries with `query zkpverify [command] [flags]`.
+Use CLI tools `fiammad` you can send transactions with `tx zkpverify [command] [flags]` and queries with `query zkpverify [command] [flags]`.
 
 Global Flags usually contains: `--from`, `--chain-id`, `--gas`, `--node`, `--keyring-backend`.
 
@@ -23,12 +23,13 @@ command currently support:
 
 ### **submit-proof**&#x20;
 
-A (zkpverify) operation for verifying a proof by proof\_system, proof, public\_input and vk.
+A (zkpverify) operation for verifying a proof by namespace, proof\_system, proof, public\_input and vk.
 
 request params:
 
 ```
 {
+  "namespace": "string",
   "proof_system": "string",
   "proof": "string",
   "public_input": "string",
@@ -52,13 +53,13 @@ request params:
 ## Query Type CLI
 
 * [`get-proof-data`](cli-command-overview.md#get-proof-data)
-* [`get-bitvm-witness`](cli-command-overview.md#get-bitvm-witness)
+* [`get-bitvm-challenge-data`](cli-command-overview.md#get-bitvm-challenge-data)
 * [`get-verify-result`](cli-command-overview.md#get-verify-result)
 * [`pending-proof`](cli-command-overview.md#pending-proof) &#x20;
 
-### **get-bitvm-witness**&#x20;
+### **get-bitvm-challenge-data**&#x20;
 
-Query bitVM witness stored in the fiamma by proof\_id.&#x20;
+Query bitVM chanllenge data stored in the fiamma by proof\_id.&#x20;
 
 request params:
 
@@ -72,7 +73,13 @@ response:
 
 ```
 {
-  "witness": "string"
+  "bitvm_challenge_data": {
+    "proposer": "string",
+    "public_input": "string",
+    "verify_result": "bool",
+    "vk": "string",
+    "witness": "string"
+  }
 }
 ```
 
@@ -93,10 +100,11 @@ response:
 ```
 {
   "proof_data": {
-    "proof_system": "string",
+    "proof_system": "integer",
     "proof": "string",
     "public_input": "string",
-    "vk": "string"
+    "vk": "string",
+    "namespace": "string"
   }
 }
 ```
@@ -116,20 +124,58 @@ request params:
 response:
 
 ```
-  {
+{
+  verify_result: {
       "proof_id": "string",
       "proof_system": "string",
       "data_commitment": "string",
       "data_location": "string",
-      "result": bool,
-      "status": "string",
-      "community_verification_count": "string"
+      "result": "bool",
+      "status": "integer",
+      "community_verification_count": "integer",
+      "namespace": "string"
+  }
+}
+```
+
+### **get-verify-results-by-namespace**
+
+Query Proof verify status stored in the fiamma by namespace.&#x20;
+
+request params:
+
+```
+{
+  "namespace": "string",
+}
+```
+
+response:
+
+```
+{
+  verify_result: [
+    {
+      "proof_id": "string",
+      "proof_system": "string",
+      "data_commitment": "string",
+      "data_location": "string",
+      "result": "bool",
+      "status": "integer",
+      "community_verification_count": "integer",
+      "namespace": "string"
     },
+    ...
+  ]
+}
+ 
 ```
 
 ### **pending-proof**&#x20;
 
 Queries a list of pending proof verification items.&#x20;
+
+There is no request param for this method.
 
 response:
 
@@ -143,7 +189,44 @@ response:
       "data_location": "string",
       "result": bool,
       "status": "string",
-      "community_verification_count": "string"
+      "community_verification_count": "string",
+      "namespace": "string"
+    },
+    ...
+  ],
+  "pagination": {
+    "next_key": "string",
+    "total": "string"
+  }
+}
+```
+
+### **pending-proof-by-namespace**&#x20;
+
+Queries a list of pending proof verification items by namespace.&#x20;
+
+request params:
+
+```
+{
+  "namespace": "string",
+}
+```
+
+response:
+
+```
+{
+  "pending_proofs": [
+    {
+      "proof_id": "string",
+      "proof_system": "string",
+      "data_commitment": "string",
+      "data_location": "string",
+      "result": bool,
+      "status": "string",
+      "community_verification_count": "string",
+      "namespace": "string"
     },
     ...
   ],
