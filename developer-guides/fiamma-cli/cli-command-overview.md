@@ -46,7 +46,7 @@ request params:
 ```
 {
   "proof_id": "string",
-  "verify_result": bool
+  "verify_result": "bool"
 }
 ```
 
@@ -55,7 +55,9 @@ request params:
 * [`get-proof-data`](cli-command-overview.md#get-proof-data)
 * [`get-bitvm-challenge-data`](cli-command-overview.md#get-bitvm-challenge-data)
 * [`get-verify-result`](cli-command-overview.md#get-verify-result)
-* [`pending-proof`](cli-command-overview.md#pending-proof) &#x20;
+* [`get-verify-results-by-namespace`](cli-command-overview.md#get-verify-results-by-namespace)
+* [`pending-proof`](cli-command-overview.md#pending-proof)
+* [`pending-proof-by-namespace`](cli-command-overview.md#pending-proof-by-namespace) &#x20;
 
 ### **get-bitvm-challenge-data**&#x20;
 
