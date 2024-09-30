@@ -1,6 +1,6 @@
 ---
 description: >-
-  In this tutorial, you will learn how to use the Fiammad Command Line Interface to
+  In this tutorial, you will learn how to use the Fiammad Command Line Interface(CLI) to
   send requests related to zkpverify.
 ---
 
@@ -23,10 +23,11 @@ cd fiamma
 
 git checkout <release-version>
 ```
+## ZKPVerify Module
 
-## 1. Send your proof to Fiamma network
+### 1. Send your proof to Fiamma network
 
-### BitVM proof
+**Submit BitVM proof**
 
 The BitVM proof need the proof file, public input file and verifying key file. You may set gas and fees.
 
@@ -62,7 +63,7 @@ fiammad tx zkpverify submit-proof \
   ./prover_examples/bitvm/vk.bitvm
 ```
 
-## 2. Get Proof id
+### 2. Get Proof id
 
 When you have finished submitting your proof, there are two ways to query the proof id of the proof you have submitted.
 
@@ -101,7 +102,7 @@ allDataHex="${NEW_NAMESPACE}${NEW_PROOF_SYSTEM}${NEW_PROOF}${NEW_PUBLIC_INPUT}${
 echo -n "$allDataHex" | xxd -r -p | sha256sum | awk '{print $1}'
 ```
 
-## 3. Submit community verification to Fiamma network&#x20;
+### 3. Submit community verification to Fiamma network&#x20;
 
 The community verification need an proof id and verification result.&#x20;
 
@@ -136,7 +137,7 @@ In addition, we provide shell scripts to make it easier to send these commands. 
 ./scripts/cli/submit_community_verification_bitvm.sh alice
 ```
 
-## 4. Get proof data by proof id from Fiamma network
+### 4. Get proof data by proof id from Fiamma network
 
 You can query proof data stored in the fiamma network by proof id.
 
@@ -156,7 +157,7 @@ fiammad query zkpverify get-proof-data \
   1776686b821785672155f4f34a0cf0d088e721e3ec5ff32709a7cec1b5a3b669
 ```
 
-## 5. Get bitvm chanllenge data by proof id from Fiamma network
+### 5. Get bitvm chanllenge data by proof id from Fiamma network
 
 You can query bitVM chanllenge data stored in the fiamma network by proof id.
 
@@ -176,7 +177,7 @@ fiammad query zkpverify get-bitvm-challenge-data \
   1776686b821785672155f4f34a0cf0d088e721e3ec5ff32709a7cec1b5a3b669
 ```
 
-## 6. Get verify result from Fiamma network
+### 6. Get verify result from Fiamma network
 
 You can query proof verify status stored in the fiamma network by proof id.
 
@@ -196,7 +197,7 @@ fiammad query zkpverify get-verify-result \
   1776686b821785672155f4f34a0cf0d088e721e3ec5ff32709a7cec1b5a3b669
 ```
 
-## 7. Get verify result from Fiamma network
+### 7. Get verify result from Fiamma network
 
 You can query proof verify status stored in the fiamma network by namespace.
 
@@ -216,7 +217,7 @@ fiammad query zkpverify get-verify-result \
   "ZULU"
 ```
 
-## 8. Get pending proofs from Fiamma network
+### 8. Get pending proofs from Fiamma network
 
 You can queries a list of pending proof verification items in the fiamma network.
 
@@ -234,7 +235,7 @@ fiammad query zkpverify pending-proof \
   --node https://testnet-rpc.fiammachain.io
 ```
 
-## 9. Get pending proofs by namespace from Fiamma network
+### 9. Get pending proofs by namespace from Fiamma network
 
 You can queries a list of pending proof verification items by namespace in the fiamma network.
 
@@ -248,6 +249,183 @@ fiammad query zkpverify pending-proof-by-namespace \
 
 ```
 fiammad query zkpverify pending-proof-by-namespace \
+  --chain-id fiamma-testnet-1  \
+  --node https://testnet-rpc.fiammachain.io
+```
+
+## BitVMStaker Module
+
+### 1. Create a new staker account by staker address
+
+You can create a new staker account by staker address in the fiamma network.
+
+```
+fiammad tx bitvmstaker create-staker \
+  <staker_address> \
+  --from <account_name> \
+  --keyring-backend test \
+  --chain-id <chain_id>  \
+  --node <node>
+```
+
+**Example**
+
+```
+fiammad tx bitvmstaker create-staker \
+  fiammavaloper1f9t28umy70d8flvms23042ydyky7wvfmalf0yz \
+  --from dev \
+  --keyring-backend test \
+  --chain-id fiamma-testnet-1  \
+  --node https://testnet-rpc.fiammachain.io
+```
+
+### 2. Get a list of holding information about all the stakers
+
+You can query a list of holding information about all the stakers in the fiamma network.
+
+```
+fiammad query bitvmstaker all-staker-info \
+  --chain-id <chain_id>  \
+  --node <node>
+```
+
+**Example**
+
+```
+fiammad query bitvmstaker all-staker-info \
+  --chain-id fiamma-testnet-1  \
+  --node https://testnet-rpc.fiammachain.io
+```
+
+### 3. Remove a staker account by staker address
+
+You can remove a staker account by staker address in the fiamma network.
+
+```
+fiammad tx bitvmstaker remove-staker \
+  <staker_address> \
+  --from <account_name> \
+  --keyring-backend test \
+  --chain-id <chain_id>  \
+  --node <node>
+```
+
+**Example**
+
+```
+fiammad tx bitvmstaker remove-staker \
+  fiammavaloper1f9t28umy70d8flvms23042ydyky7wvfmalf0yz \
+  --from dev \
+  --keyring-backend test \
+  --chain-id fiamma-testnet-1  \
+  --node https://testnet-rpc.fiammachain.io
+```
+
+### 4. Register a new verification key (VK)
+
+You can Register a new verification key (VK) for a specific proof system by vk in the fiamma network.
+
+```
+fiammad tx bitvmstaker register-vk \
+  <vk> \
+  --from <account_name> \
+  --keyring-backend test \
+  --chain-id <chain_id>  \
+  --node <node>
+```
+
+**Example**
+
+```
+: ${VK_FILE:=fiamma-network/fiamma/prover_examples/bitvm/vk.bitvm}
+
+fiammad tx bitvmstaker register-vk \
+  $VK_FILE \
+  --from dev \
+  --keyring-backend test \
+  --chain-id fiamma-testnet-1  \
+  --node https://testnet-rpc.fiammachain.io
+```
+
+### 5. Get a list of registered VKs
+
+You can query a list of registered verification keys (VKs) in the fiamma network.
+
+```
+fiammad query bitvmstaker registered-vk-list \
+  --chain-id <chain_id>  \
+  --node <node>
+```
+
+**Example**
+
+```
+fiammad query bitvmstaker registered-vk-list \
+  --chain-id fiamma-testnet-1  \
+  --node https://testnet-rpc.fiammachain.io
+```
+
+### 6. Remove a registered verification key(VK)
+
+You can remove a previously registered verification key (VK) for a specific proof system in the fiamma network.
+
+```
+fiammad tx bitvmstaker remove-vk \
+  <vk> \
+  --from <account_name> \
+  --keyring-backend test \
+  --chain-id <chain_id>  \
+  --node <node>
+```
+
+**Example**
+
+```
+fiammad tx bitvmstaker remove-staker \
+  $VK_FILE \
+  --from dev \
+  --keyring-backend test \
+  --chain-id fiamma-testnet-1  \
+  --node https://testnet-rpc.fiammachain.io
+```
+### 7. Update committee addresses
+
+You can update the address of the committee responsible for overseeing the blockchain operations or specific proof systems in the fiamma network.
+
+```
+fiammad tx bitvmstaker update-committee-address \
+  <committee_address> \
+  --from <account_name> \
+  --keyring-backend test \
+  --chain-id <chain_id>  \
+  --node <node>
+```
+
+**Example**
+
+```
+fiammad tx bitvmstaker update-committee-address \
+  fiamma1f9t28umy70d8flvms23042ydyky7wvfmjpeuh9 \
+  --from dev \
+  --keyring-backend test \
+  --chain-id fiamma-testnet-1  \
+  --node https://testnet-rpc.fiammachain.io
+```
+
+### 8. Get the committee address
+
+You can query the address associated with the committee responsible for overseeing certain operations or governance in the fiamma network.
+
+```
+fiammad query bitvmstaker committee-address \
+  --chain-id <chain_id>  \
+  --node <node>
+```
+
+**Example**
+
+```
+fiammad query bitvmstaker committee-address \
   --chain-id fiamma-testnet-1  \
   --node https://testnet-rpc.fiammachain.io
 ```
