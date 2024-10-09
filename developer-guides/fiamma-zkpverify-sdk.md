@@ -16,12 +16,12 @@ The [fiamma-sdk-rs](https://github.com/fiamma-chain/fiamma-sdk-rs.git) is the Ru
 
 * [Submit a proof to the blockchain.](fiamma-zkpverify-sdk.md#id-1.-submit\_proof)
 * [Query transaction status and results.](fiamma-zkpverify-sdk.md#id-2.-get\_tx)
-* Query a proof verify result and status.
+* [Query a proof verify result and status.](fiamma-zkpverify-sdk.md#id-8.-get\_verify\_result)
 
 #### **Other features**
 
 * Create and remove validators on the Fiamma blockchain.
-* Query the challenge data related to a specific BitVM proof or transaction
+* Query the challenge data related to a specific BitVM proof or transaction.
 * Query the basic account functionality.
 * etc...
 
@@ -108,7 +108,7 @@ let tx = query_client.get_tx(tx_id).await;
 
 ####
 
-#### 4. create\_staker
+#### 3. create\_staker
 
 **Description**: Adds a new validator to the Fiamma network.
 
@@ -141,7 +141,7 @@ let msg = MsgCreateStaker {
 let resp = tx_client.create_staker(msg).await;
 ```
 
-#### 5. remove\_staker
+#### 4. remove\_staker
 
 **Description**: Deletes an existing validator from the Fiamma network.
 
@@ -174,7 +174,7 @@ let msg = MsgRemoveStaker {
 let resp = tx_client.remove_staker(msg).await;
 ```
 
-#### 6. get\_account\_info
+#### 5. get\_account\_info
 
 **Description**: contains all the necessary fields for basic account functionality. **Parameters**: An instance of the `Wallet` struct created with the `PRIVATE_KEY`. This wallet will manage the user's account and facilitate interactions with the Fiamma blockchain.
 
@@ -188,7 +188,7 @@ let wallet = Wallet::new(PRIVATE_KEY);
 let account_info = wallet.get_account_info(NODE.to_string()).await;
 ```
 
-#### 7. get\_proof\_data
+#### 6. get\_proof\_data
 
 **Description**: Retrieves the necessary proof data from the Fiamma blockchain.
 
@@ -222,7 +222,7 @@ let query_client = QueryClient::new(NODE);
 let proof_data = query_client.get_proof_data(proof_id).await;
 ```
 
-#### 8. get\_bitvm\_challenge\_data
+#### 7. get\_bitvm\_challenge\_data
 
 **Description**: Retrieves the challenge data related to a specific BitVM proof or transaction.
 
@@ -260,4 +260,53 @@ const NODE: &str = "http://54.65.137.66:9090";
 let proof_id = "1776686b821785672155f4f34a0cf0d088e721e3ec5ff32709a7cec1b5a3b669";
 let query_client = QueryClient::new(NODE);
 let bitvm_challenge_data = query_client.get_bitvm_challenge_data(proof_id).await;
+```
+
+#### 8. get\_verify\_result
+
+**Description**: Retrieves the verification result of a previously submitted ZKP. The result indicates whether the proof has passed the verification checks.
+
+**Parameters**:
+
+* **proof\_id**: A unique identifier for the proof you want to retrieve.
+
+**Response**:
+
+* **proof\_id** (`String`): Unique identifier of the proof.
+* **proof\_system** (`i32`): Enum representing the proof system used.
+* **data\_commitment** (`String`): Commitment to the data that was verified.
+* **data\_location** (`i32`): Enum representing where the data is located.
+* **result** (`bool`): Verification result (true if successful).
+* **status** (`i32`): Enum representing the current status of verification.
+* **community\_verification\_count** (`u64`): Number of community verifications performed.
+* **namespace** (`String`): The namespace under which this proof belongs.
+
+```rust
+pub struct VerifyResult {
+    #[prost(string, tag = "1")]
+    pub proof_id: ::prost::alloc::string::String,
+    #[prost(enumeration = "ProofSystem", tag = "2")]
+    pub proof_system: i32,
+    #[prost(string, tag = "3")]
+    pub data_commitment: ::prost::alloc::string::String,
+    #[prost(enumeration = "DataLocation", tag = "4")]
+    pub data_location: i32,
+    #[prost(bool, tag = "5")]
+    pub result: bool,
+    #[prost(enumeration = "VerificationStatus", tag = "6")]
+    pub status: i32,
+    #[prost(uint64, tag = "7")]
+    pub community_verification_count: u64,
+    #[prost(string, tag = "8")]
+    pub namespace: ::prost::alloc::string::String,
+}
+```
+
+**Example Usage**:
+
+```rust
+const NODE: &str = "http://54.65.137.66:9090";
+let proof_id = "8a17276c37500fe1f0b277f21205592eac037b60f8a7021713ed2b99fe4f78f2";
+let query_client = QueryClient::new(NODE);
+let bitvm_challenge_data = query_client.get_verify_result(proof_id).await;
 ```
