@@ -6,6 +6,10 @@ description: >-
 
 # Become a Validator
 
+{% hint style="info" %}
+On the current testnet, users who need to register as Fiamma validators must be approved before they are allowed to create one. If you wish to become a Fiamma validator, please follow [Fiamma's relevant announcements](https://x.com/Fiamma\_Chain) or contact the [Fiamma team](https://app.gitbook.com/u/6g4AtPl7qkgj2hKuTiFRQ7DXCXD2).
+{% endhint %}
+
 ## Prerequisites[​](https://docs.babylonchain.io/docs/user-guides/btc-staking-testnet/become-validator#prerequisites) <a href="#prerequisites" id="prerequisites"></a>
 
 Having a full [node setup ](set-up-a-node.md)and synced by following this guide
