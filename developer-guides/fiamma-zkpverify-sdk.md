@@ -12,13 +12,13 @@ The [fiamma-sdk-rs](https://github.com/fiamma-chain/fiamma-sdk-rs.git) is the Ru
 
 ### Main Features
 
-#### **For eco-project parties**
+<h4>For eco-project parties</h4>
 
-* [Submit a proof to the blockchain.](fiamma-zkpverify-sdk.md#id-1.-submit\_proof)
-* [Query transaction status and results.](fiamma-zkpverify-sdk.md#id-2.-get\_tx)
-* [Query a proof verify result and status.](fiamma-zkpverify-sdk.md#id-3.-get\_verify\_result)
+* [Submit a proof to the blockchain.](fiamma-zkpverify-sdk.md#id-1.-submit_proof)
+* [Query transaction status and results.](fiamma-zkpverify-sdk.md#id-2.-get_tx)
+* [Query a proof verify result and status.](fiamma-zkpverify-sdk.md#id-3.-get_verify_result)
 
-#### **Other features**
+<h4>Other features</h4>
 
 * Create and remove validators on the Fiamma blockchain.
 * Query the challenge data related to a specific BitVM proof or transaction.
@@ -27,7 +27,7 @@ The [fiamma-sdk-rs](https://github.com/fiamma-chain/fiamma-sdk-rs.git) is the Ru
 
 ### API Methods List
 
-#### 1. submit\_proof
+<h4>1. submit_proof</h4>
 
 **Description**: Submits a proof to the Fiamma blockchain.
 
@@ -60,9 +60,9 @@ pub struct MsgSubmitProof {
 ```rust
 const SENDER_PRIVATE_KEY: &str =
 "59514b4e9c63b91cc9d3b6b882f1c5ee7449890c7c1116782670c71c96957897";
-const NODE: &str = "http://54.65.137.66:9090";
+const NODE: &str = "http://54.65.75.57:9090";
 const BITVM_PROOF_SYSTEM: &str = "GROTH16_BN254_BITVM";
-const NAMESPACE: &str = "ZULU";
+const NAMESPACE: &str = "test-namespace";
 let wallet = Wallet::new(SENDER_PRIVATE_KEY);
 let gas_limit = 80_000_000_u64;
 let fee = 2000_u128;
@@ -85,7 +85,7 @@ fn msg_submit_proof(account_id: AccountId) -> MsgSubmitProof {
 }
 ```
 
-#### 2. get\_tx
+<h4>2. get_tx</h4>
 
 **Description**: Queries the status of a specific transaction. after submitting the proof, this method can be used to check whether the transaction was successfully submitted to the blockchain network.
 
@@ -98,7 +98,7 @@ fn msg_submit_proof(account_id: AccountId) -> MsgSubmitProof {
 ```rust
 const SENDER_PRIVATE_KEY: &str =
 "59514b4e9c63b91cc9d3b6b882f1c5ee7449890c7c1116782670c71c96957897";
-const NODE: &str = "http://54.65.137.66:9090";
+const NODE: &str = "http://54.65.75.57:9090";
 let gas_limit = 80_000_000_u64;
 let fee = 2000_u128;
 let tx_id = "FECF6B15F33A220A4ACAB850BD968BB8C6C16DD610C5294B19C2C91511E7EE44";
@@ -106,7 +106,7 @@ let query_client = TxClient::new(SENDER_PRIVATE_KEY, NODE, fee, gas_limit);
 let tx = query_client.get_tx(tx_id).await;
 ```
 
-#### 3. get\_verify\_result
+<h4>3. get_verify_result</h4>
 
 **Description**: Retrieves the verification result of a previously submitted ZKP. The result indicates whether the proof has passed the verification checks.
 
@@ -149,13 +149,76 @@ pub struct VerifyResult {
 **Example Usage**:
 
 ```rust
-const NODE: &str = "http://54.65.137.66:9090";
+const NODE: &str = "http://54.65.75.57:9090";
 let proof_id = "8a17276c37500fe1f0b277f21205592eac037b60f8a7021713ed2b99fe4f78f2";
 let query_client = QueryClient::new(NODE);
-let bitvm_challenge_data = query_client.get_verify_result(proof_id).await;
+let get_verify_result = query_client.get_verify_result(proof_id).await;
 ```
 
-#### 4. create\_staker
+<h4>4. get_verify_result_by_namespace</h4>
+
+**Description**: Retrieves the verification results for a specific namespace. This method is useful for querying the verification status of proofs submitted under a certain namespace, making it possible to verify the results of multiple proofs associated with the same logical group or entity.
+
+**Parameters**:
+
+* **namespace** (`String`): The namespace for which the verification results are requested which typically represents a logical grouping of proofs.
+
+**Response**:
+
+* **Vec<VerifyResult>**: A vector of VerifyResult objects, each representing the verification details of a proof under the given namespace.
+
+**Example Usage**:
+
+```rust
+const NODE: &str = "http://54.65.75.57:9090";
+const NAMESPACE: &str = "test-namespace";
+let query_client = QueryClient::new(NODE);
+let get_verify_results = query_client.get_verify_result_by_namespace(NAMESPACE).await;
+```
+
+<h4>5. submit_community_verification</h4>
+
+**Description**: allows a community member to submit their verification result for a specific proof in the Fiamma network.
+
+**Parameters**:
+
+* **creator**: The Account identifiers.
+* **proof\_id**: Unique identifier of the proof.
+* **verify\_result**: A boolean value representing the community member’s assessment of the proof.
+
+```rust
+pub struct MsgSubmitCommunityVerification {
+    pub creator: AccountId,
+    pub proof_id: String,
+    pub verify_result: bool,
+}
+```
+
+**Example Usage**:
+
+```rust
+const SENDER_PRIVATE_KEY: &str =
+"59514b4e9c63b91cc9d3b6b882f1c5ee7449890c7c1116782670c71c96957897";
+const NODE: &str = "http://54.65.75.57:9090";
+const BITVM_PROOF_SYSTEM: &str = "GROTH16_BN254_BITVM";
+const NAMESPACE: &str = "test-namespace";
+let proof_id = "8a17276c37500fe1f0b277f21205592eac037b60f8a7021713ed2b99fe4f78f2";
+let wallet = Wallet::new(SENDER_PRIVATE_KEY);
+let gas_limit = 80_000_000_u64;
+let fee = 2000_u128;
+let tx_client = TxClient::new(SENDER_PRIVATE_KEY, NODE, fee, gas_limit);
+let submit_community_verification_msg = MsgSubmitCommunityVerification {
+    creator: wallet.account_id.clone(),
+    proof_id: proof_id.to_string(),
+    verify_result: true,
+};
+let resp = tx_client
+    .submit_community_verification(submit_community_verification_msg)
+    .await
+    .unwrap();
+```
+
+<h4>6. create_staker</h4>
 
 **Description**: Adds a new validator to the Fiamma network.
 
@@ -176,7 +239,7 @@ pub struct MsgCreateStaker {
 ```rust
 const SENDER_PRIVATE_KEY: &str =
 "59514b4e9c63b91cc9d3b6b882f1c5ee7449890c7c1116782670c71c96957897";
-const NODE: &str = "http://54.65.137.66:9090";
+const NODE: &str = "http://54.65.75.57:9090";
 let wallet = Wallet::new(SENDER_PRIVATE_KEY);
 let gas_limit = 80_000_000_u64;
 let fee = 2000_u128;
@@ -188,7 +251,7 @@ let msg = MsgCreateStaker {
 let resp = tx_client.create_staker(msg).await;
 ```
 
-#### 5. remove\_staker
+<h4>7. remove_staker</h4>
 
 **Description**: Deletes an existing validator from the Fiamma network.
 
@@ -209,7 +272,7 @@ pub struct MsgRemoveStaker {
 ```rust
 const SENDER_PRIVATE_KEY: &str =
 "59514b4e9c63b91cc9d3b6b882f1c5ee7449890c7c1116782670c71c96957897";
-const NODE: &str = "http://54.65.137.66:9090";
+const NODE: &str = "http://54.65.75.57:9090";
 let wallet = Wallet::new(SENDER_PRIVATE_KEY);
 let gas_limit = 80_000_000_u64;
 let fee = 2000_u128;
@@ -221,7 +284,7 @@ let msg = MsgRemoveStaker {
 let resp = tx_client.remove_staker(msg).await;
 ```
 
-#### 6. get\_account\_info
+<h4>8. get_account_info</h4>
 
 **Description**: contains all the necessary fields for basic account functionality. **Parameters**: An instance of the `Wallet` struct created with the `PRIVATE_KEY`. This wallet will manage the user's account and facilitate interactions with the Fiamma blockchain.
 
@@ -230,12 +293,12 @@ let resp = tx_client.remove_staker(msg).await;
 ```rust
 const SENDER_PRIVATE_KEY: &str =
 "59514b4e9c63b91cc9d3b6b882f1c5ee7449890c7c1116782670c71c96957897";
-const NODE: &str = "http://54.65.137.66:9090";
+const NODE: &str = "http://54.65.75.57:9090";
 let wallet = Wallet::new(PRIVATE_KEY);
 let account_info = wallet.get_account_info(NODE.to_string()).await;
 ```
 
-#### 7. get\_proof\_data
+<h4>9. get_proof_data</h4>
 
 **Description**: Retrieves the necessary proof data from the Fiamma blockchain.
 
@@ -263,13 +326,13 @@ pub struct ProofData {
 **Example Usage**:
 
 ```rust
-const NODE: &str = "http://54.65.137.66:9090";
+const NODE: &str = "http://54.65.75.57:9090";
 let proof_id = "1776686b821785672155f4f34a0cf0d088e721e3ec5ff32709a7cec1b5a3b669";
 let query_client = QueryClient::new(NODE);
 let proof_data = query_client.get_proof_data(proof_id).await;
 ```
 
-#### 8. get\_bitvm\_challenge\_data
+<h4>10. get_bitvm_challenge_data</h4>
 
 **Description**: Retrieves the challenge data related to a specific BitVM proof or transaction.
 
@@ -303,9 +366,47 @@ pub struct BitVmChallengeData {
 **Example Usage**:
 
 ```rust
-const NODE: &str = "http://54.65.137.66:9090";
+const NODE: &str = "http://54.65.75.57:9090";
 let proof_id = "1776686b821785672155f4f34a0cf0d088e721e3ec5ff32709a7cec1b5a3b669";
 let query_client = QueryClient::new(NODE);
 let bitvm_challenge_data = query_client.get_bitvm_challenge_data(proof_id).await;
+```
+
+<h4>11. get_pending_proof</h4>
+
+**Description**: Retrieves a list of proofs that are currently awaiting verification. This is useful for community members or validators who want to access pending tasks and perform verifications.
+
+**Response**:
+
+* **Vec<VerifyResult>**: A vector of VerifyResult objects that are currently pending verification.
+
+**Example Usage**:
+
+```rust
+const NODE: &str = "http://54.65.75.57:9090";
+const NAMESPACE: &str = "test-namespace";
+let query_client = QueryClient::new(NODE);
+let get_pending_proof = query_client.get_pending_proof().await;
+```
+
+<h4>12. get_pending_proof_by_namespace</h4>
+
+**Description**: Retrieves a list of proofs that are currently awaiting verification for a specific namespace. This is useful for community members or validators who want to access pending tasks and perform verifications.
+
+**Parameters**:
+
+* **namespace** (`String`): The namespace for which the pending proofs are requested which typically represents a logical grouping of proofs.
+
+**Response**:
+
+* **Vec<VerifyResult>**: A vector of VerifyResult objects that are currently pending verification under the given namespace.
+
+**Example Usage**:
+
+```rust
+const NODE: &str = "http://54.65.75.57:9090";
+const NAMESPACE: &str = "test-namespace";
+let query_client = QueryClient::new(NODE);
+let get_pending_proof_by_namespace = query_client.get_pending_proof_by_namespace(NAMESPACE).await;
 ```
 

@@ -31,7 +31,7 @@ git checkout <release-version>
 
 The BitVM proof need the proof file, public input file and verifying key file. You may set gas and fees.
 
-```
+```bash
 fiammad tx zkpverify submit-proof \
   --from <account_name> --chain-id <chain_id>  \
   --gas <gas> --fees <fees> \
@@ -44,19 +44,19 @@ fiammad tx zkpverify submit-proof \
   <vk>
 ```
 
-The current Fiamma network chain-id is `fiamma-testnet-1`, the namespace is `ZULU`, the proof system is **`GROTH16_BN254_BITVM`** or **`FFPLONK_BN254_BITVM`** and the node is [https://testnet-rpc.fiammachain.io](https://testnet-rpc.fiammachain.io).
+The current Fiamma network chain-id is `fiamma-testnet-1`, the namespace is `test-namespace`, the proof system is **`GROTH16_BN254_BITVM`** or **`FFPLONK_BN254_BITVM`** and the node is [https://testnet-rpc.fiammachain.io](https://testnet-rpc.fiammachain.io).
 
 **Example** Proof system use **GROTH16\_BN254\_BITVM**.
 
 Send BitVM proof:
 
-```
+```bash
 fiammad tx zkpverify submit-proof \
   --from alice --chain-id fiamma-testnet-1  \
   --gas 20000000 --fees 2000ufia \
   --node https://testnet-rpc.fiammachain.io \
   --keyring-backend test \
-  "ZULU" \
+  "test-namespace" \
   "GROTH16_BN254_BITVM" \
   ./prover_examples/bitvm/proof.bitvm \
   ./prover_examples/bitvm/public_input.bitvm \
@@ -81,13 +81,13 @@ fiammad query tx 65C110AE8E0624AC34CC1F7E36E253B3437B28E008433AE499DEF40D770A191
 
 The proof id can be calculated from `sha256sum` of proof inputs using shell. It Concatenate the proof system, proof, public input,and vk.
 
-```
+```bash
 # the proof input files directory is fiamma/prover_examples/bitvm
 : ${PROOF_FILE:=proof.bitvm}
 : ${PUBLIC_INPUT_FILE:=public_input.bitvm}
 : ${VK_FILE:=vk.bitvm}
 : ${PROOF_SYSTEM:="GROTH16_BN254_BITVM"}
-: ${NAMESPACE:="ZULU"}
+: ${NAMESPACE:="test-namespace"}
 : ${PROOF_SYSTEM:="GROTH16_BN254_BITVM"}
 
 NEW_NAMESPACE=$(echo -n $NAMESPACE | xxd -p)
@@ -108,7 +108,7 @@ The community verification need an proof id and verification result.&#x20;
 
 submit community verification:
 
-```
+```bash
 fiammad tx zkpverify submit-community-verification \
   --from <account_name> --chain-id <chain_id>  \
   --gas <gas> --fees <fees> \
@@ -120,7 +120,7 @@ fiammad tx zkpverify submit-community-verification \
 
 **Example** You may use the above shell to calculate a proof id, and use fiammad command to sumbit community verification with a verification result.
 
-```
+```bash
 fiammad tx zkpverify submit-community-verification \
   --from alice --chain-id fiamma-testnet-1  \
   --gas 20000000 --fees 2000ufia \
@@ -132,7 +132,7 @@ fiammad tx zkpverify submit-community-verification \
 
 In addition, we provide shell scripts to make it easier to send these commands. The parameter accepted by the script is account.
 
-```
+```bash
 // Assuming you are currently in the root directory at fiamma
 ./scripts/cli/submit_community_verification_bitvm.sh alice
 ```
@@ -141,7 +141,7 @@ In addition, we provide shell scripts to make it easier to send these commands. 
 
 You can query proof data stored in the fiamma network by proof id.
 
-```
+```bash
 fiammad query zkpverify get-proof-data \
   --chain-id <chain_id>  \
   --node <node> \
@@ -150,7 +150,7 @@ fiammad query zkpverify get-proof-data \
 
 **Example**
 
-```
+```bash
 fiammad query zkpverify get-proof-data \
   --chain-id fiamma-testnet-1  \
   --node https://testnet-rpc.fiammachain.io \
@@ -161,7 +161,7 @@ fiammad query zkpverify get-proof-data \
 
 You can query bitVM chanllenge data stored in the fiamma network by proof id.
 
-```
+```bash
 fiammad query zkpverify get-bitvm-challenge-data \
   --chain-id <chain_id>  \
   --node <node> \
@@ -170,7 +170,7 @@ fiammad query zkpverify get-bitvm-challenge-data \
 
 **Example**
 
-```
+```bash
 fiammad query zkpverify get-bitvm-challenge-data \
   --chain-id fiamma-testnet-1  \
   --node https://testnet-rpc.fiammachain.io \
@@ -181,7 +181,7 @@ fiammad query zkpverify get-bitvm-challenge-data \
 
 You can query proof verify status stored in the fiamma network by proof id.
 
-```
+```bash
 fiammad query zkpverify get-verify-result \
   --chain-id <chain_id>  \
   --node <node> \
@@ -190,18 +190,18 @@ fiammad query zkpverify get-verify-result \
 
 **Example**
 
-```
+```bash
 fiammad query zkpverify get-verify-result \
   --chain-id fiamma-testnet-1  \
   --node https://testnet-rpc.fiammachain.io \
   1776686b821785672155f4f34a0cf0d088e721e3ec5ff32709a7cec1b5a3b669
 ```
 
-### 7. Get verify result from Fiamma network
+### 7. Get verify result by namespace from Fiamma network
 
 You can query proof verify status stored in the fiamma network by namespace.
 
-```
+```bash
 fiammad query zkpverify get-verify-results-by-namespace \
   --chain-id <chain_id>  \
   --node <node> \
@@ -210,18 +210,18 @@ fiammad query zkpverify get-verify-results-by-namespace \
 
 **Example**
 
-```
+```bash
 fiammad query zkpverify get-verify-result \
   --chain-id fiamma-testnet-1  \
   --node https://testnet-rpc.fiammachain.io \
-  "ZULU"
+  "test-namespace"
 ```
 
 ### 8. Get pending proofs from Fiamma network
 
 You can queries a list of pending proof verification items in the fiamma network.
 
-```
+```bash
 fiammad query zkpverify pending-proof \
   --chain-id <chain_id>  \
   --node <node>
@@ -229,7 +229,7 @@ fiammad query zkpverify pending-proof \
 
 **Example**
 
-```
+```bash
 fiammad query zkpverify pending-proof \
   --chain-id fiamma-testnet-1  \
   --node https://testnet-rpc.fiammachain.io
@@ -239,18 +239,20 @@ fiammad query zkpverify pending-proof \
 
 You can queries a list of pending proof verification items by namespace in the fiamma network.
 
-```
+```bash
 fiammad query zkpverify pending-proof-by-namespace \
   --chain-id <chain_id>  \
   --node <node>
+  <namespace>
 ```
 
 **Example**
 
-```
+```bash
 fiammad query zkpverify pending-proof-by-namespace \
   --chain-id fiamma-testnet-1  \
   --node https://testnet-rpc.fiammachain.io
+  "test-namespace"
 ```
 
 ## BitVMStaker Module
@@ -259,7 +261,7 @@ fiammad query zkpverify pending-proof-by-namespace \
 
 You can create a new staker account by staker address in the fiamma network.
 
-```
+```bash
 fiammad tx bitvmstaker create-staker \
   <staker_address> \
   --from <account_name> \
@@ -270,7 +272,7 @@ fiammad tx bitvmstaker create-staker \
 
 **Example**
 
-```
+```bash
 fiammad tx bitvmstaker create-staker \
   fiammavaloper1f9t28umy70d8flvms23042ydyky7wvfmalf0yz \
   --from dev \
@@ -283,7 +285,7 @@ fiammad tx bitvmstaker create-staker \
 
 You can query a list of holding information about all the stakers in the fiamma network.
 
-```
+```bash
 fiammad query bitvmstaker all-staker-info \
   --chain-id <chain_id>  \
   --node <node>
@@ -291,7 +293,7 @@ fiammad query bitvmstaker all-staker-info \
 
 **Example**
 
-```
+```bash
 fiammad query bitvmstaker all-staker-info \
   --chain-id fiamma-testnet-1  \
   --node https://testnet-rpc.fiammachain.io
@@ -301,7 +303,7 @@ fiammad query bitvmstaker all-staker-info \
 
 You can remove a staker account by staker address in the fiamma network.
 
-```
+```bash
 fiammad tx bitvmstaker remove-staker \
   <staker_address> \
   --from <account_name> \
@@ -312,7 +314,7 @@ fiammad tx bitvmstaker remove-staker \
 
 **Example**
 
-```
+```bash
 fiammad tx bitvmstaker remove-staker \
   fiammavaloper1f9t28umy70d8flvms23042ydyky7wvfmalf0yz \
   --from dev \
@@ -325,7 +327,7 @@ fiammad tx bitvmstaker remove-staker \
 
 You can Register a new verification key (VK) for a specific proof system by vk in the fiamma network.
 
-```
+```bash
 fiammad tx bitvmstaker register-vk \
   <vk> \
   --from <account_name> \
@@ -336,7 +338,7 @@ fiammad tx bitvmstaker register-vk \
 
 **Example**
 
-```
+```bash
 : ${VK_FILE:=fiamma-network/fiamma/prover_examples/bitvm/vk.bitvm}
 
 fiammad tx bitvmstaker register-vk \
@@ -351,7 +353,7 @@ fiammad tx bitvmstaker register-vk \
 
 You can query a list of registered verification keys (VKs) in the fiamma network.
 
-```
+```bash
 fiammad query bitvmstaker registered-vk-list \
   --chain-id <chain_id>  \
   --node <node>
@@ -359,7 +361,7 @@ fiammad query bitvmstaker registered-vk-list \
 
 **Example**
 
-```
+```bash
 fiammad query bitvmstaker registered-vk-list \
   --chain-id fiamma-testnet-1  \
   --node https://testnet-rpc.fiammachain.io
@@ -369,7 +371,7 @@ fiammad query bitvmstaker registered-vk-list \
 
 You can remove a previously registered verification key (VK) for a specific proof system in the fiamma network.
 
-```
+```bash
 fiammad tx bitvmstaker remove-vk \
   <vk> \
   --from <account_name> \
@@ -380,7 +382,7 @@ fiammad tx bitvmstaker remove-vk \
 
 **Example**
 
-```
+```bash
 fiammad tx bitvmstaker remove-staker \
   $VK_FILE \
   --from dev \
@@ -392,7 +394,7 @@ fiammad tx bitvmstaker remove-staker \
 
 You can update the address of the committee responsible for overseeing the blockchain operations or specific proof systems in the fiamma network.
 
-```
+```bash
 fiammad tx bitvmstaker update-committee-address \
   <committee_address> \
   --from <account_name> \
@@ -403,7 +405,7 @@ fiammad tx bitvmstaker update-committee-address \
 
 **Example**
 
-```
+```bash
 fiammad tx bitvmstaker update-committee-address \
   fiamma1f9t28umy70d8flvms23042ydyky7wvfmjpeuh9 \
   --from dev \
@@ -416,7 +418,7 @@ fiammad tx bitvmstaker update-committee-address \
 
 You can query the address associated with the committee responsible for overseeing certain operations or governance in the fiamma network.
 
-```
+```bash
 fiammad query bitvmstaker committee-address \
   --chain-id <chain_id>  \
   --node <node>
@@ -424,7 +426,7 @@ fiammad query bitvmstaker committee-address \
 
 **Example**
 
-```
+```bash
 fiammad query bitvmstaker committee-address \
   --chain-id fiamma-testnet-1  \
   --node https://testnet-rpc.fiammachain.io
