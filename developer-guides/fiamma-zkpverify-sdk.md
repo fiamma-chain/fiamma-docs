@@ -12,13 +12,13 @@ The [fiamma-sdk-rs](https://github.com/fiamma-chain/fiamma-sdk-rs.git) is the Ru
 
 ### Main Features
 
-<h4>For eco-project parties</h4>
+#### For eco-project parties
 
-* [Submit a proof to the blockchain.](fiamma-zkpverify-sdk.md#id-1.-submit_proof)
-* [Query transaction status and results.](fiamma-zkpverify-sdk.md#id-2.-get_tx)
-* [Query a proof verify result and status.](fiamma-zkpverify-sdk.md#id-3.-get_verify_result)
+* [Submit a proof to the blockchain.](fiamma-zkpverify-sdk.md#id-1.-submit\_proof)
+* [Query transaction status and results.](fiamma-zkpverify-sdk.md#id-2.-get\_tx)
+* [Query a proof verify result and status.](fiamma-zkpverify-sdk.md#id-3.-get\_verify\_result)
 
-<h4>Other features</h4>
+#### Other features
 
 * Create and remove validators on the Fiamma blockchain.
 * Query the challenge data related to a specific BitVM proof or transaction.
@@ -27,7 +27,7 @@ The [fiamma-sdk-rs](https://github.com/fiamma-chain/fiamma-sdk-rs.git) is the Ru
 
 ### API Methods List
 
-<h4>1. submit_proof</h4>
+#### 1. submit\_proof
 
 **Description**: Submits a proof to the Fiamma blockchain.
 
@@ -43,6 +43,7 @@ When a project submits a proof to the Fiamma network, the Fiamma network verifie
 * **public\_input**: The public input associated with the proof, serialized as bytes.
 * **vk**: The verification key for the proof, also serialized as bytes.
 * **namespace**: The namespace under which the proof is being submitted.
+* **data\_location**:  proof data storage location, the default is fiamma, you can specify the DA storage later.
 
 ```rust
 pub struct MsgSubmitProof {
@@ -52,7 +53,8 @@ pub struct MsgSubmitProof {
     pub public_input: Vec<u8>,
     pub vk: Vec<u8>,
     pub namespace: String,
-}
+    pub data_location: String,
+} 
 ```
 
 **Example Usage**:
@@ -60,9 +62,10 @@ pub struct MsgSubmitProof {
 ```rust
 const SENDER_PRIVATE_KEY: &str =
 "59514b4e9c63b91cc9d3b6b882f1c5ee7449890c7c1116782670c71c96957897";
-const NODE: &str = "http://54.65.75.57:9090";
+const NODE: &str = "http://127.0.0.1:9090";
 const BITVM_PROOF_SYSTEM: &str = "GROTH16_BN254_BITVM";
 const NAMESPACE: &str = "test-namespace";
+const DATA_LOCATION: &str = "FIAMMA";
 let wallet = Wallet::new(SENDER_PRIVATE_KEY);
 let gas_limit = 80_000_000_u64;
 let fee = 2000_u128;
@@ -81,11 +84,13 @@ fn msg_submit_proof(account_id: AccountId) -> MsgSubmitProof {
         public_input,
         vk,
         namespace: NAMESPACE.to_string(),
+        data_location: DATA_LOCATION.to_string(),
+    
     }
 }
 ```
 
-<h4>2. get_tx</h4>
+#### 2. get\_tx
 
 **Description**: Queries the status of a specific transaction. after submitting the proof, this method can be used to check whether the transaction was successfully submitted to the blockchain network.
 
@@ -98,7 +103,7 @@ fn msg_submit_proof(account_id: AccountId) -> MsgSubmitProof {
 ```rust
 const SENDER_PRIVATE_KEY: &str =
 "59514b4e9c63b91cc9d3b6b882f1c5ee7449890c7c1116782670c71c96957897";
-const NODE: &str = "http://54.65.75.57:9090";
+const NODE: &str = "http://127.0.0.1:9090";
 let gas_limit = 80_000_000_u64;
 let fee = 2000_u128;
 let tx_id = "FECF6B15F33A220A4ACAB850BD968BB8C6C16DD610C5294B19C2C91511E7EE44";
@@ -106,7 +111,7 @@ let query_client = TxClient::new(SENDER_PRIVATE_KEY, NODE, fee, gas_limit);
 let tx = query_client.get_tx(tx_id).await;
 ```
 
-<h4>3. get_verify_result</h4>
+#### 3. get\_verify\_result
 
 **Description**: Retrieves the verification result of a previously submitted ZKP. The result indicates whether the proof has passed the verification checks.
 
@@ -131,17 +136,13 @@ pub struct VerifyResult {
     pub proof_id: ::prost::alloc::string::String,
     #[prost(enumeration = "ProofSystem", tag = "2")]
     pub proof_system: i32,
-    #[prost(string, tag = "3")]
-    pub data_commitment: ::prost::alloc::string::String,
-    #[prost(enumeration = "DataLocation", tag = "4")]
-    pub data_location: i32,
-    #[prost(bool, tag = "5")]
+    #[prost(bool, tag = "3")]
     pub result: bool,
-    #[prost(enumeration = "VerificationStatus", tag = "6")]
+    #[prost(enumeration = "VerificationStatus", tag = "4")]
     pub status: i32,
-    #[prost(uint64, tag = "7")]
+    #[prost(uint64, tag = "5")]
     pub community_verification_count: u64,
-    #[prost(string, tag = "8")]
+    #[prost(string, tag = "6")]
     pub namespace: ::prost::alloc::string::String,
 }
 ```
@@ -149,13 +150,13 @@ pub struct VerifyResult {
 **Example Usage**:
 
 ```rust
-const NODE: &str = "http://54.65.75.57:9090";
+const NODE: &str = "http://127.0.0.1:9090";
 let proof_id = "8a17276c37500fe1f0b277f21205592eac037b60f8a7021713ed2b99fe4f78f2";
 let query_client = QueryClient::new(NODE);
 let get_verify_result = query_client.get_verify_result(proof_id).await;
 ```
 
-<h4>4. get_verify_result_by_namespace</h4>
+#### 4. get\_verify\_result\_by\_namespace
 
 **Description**: Retrieves the verification results for a specific namespace. This method is useful for querying the verification status of proofs submitted under a certain namespace, making it possible to verify the results of multiple proofs associated with the same logical group or entity.
 
@@ -165,18 +166,18 @@ let get_verify_result = query_client.get_verify_result(proof_id).await;
 
 **Response**:
 
-* **Vec<VerifyResult>**: A vector of VerifyResult objects, each representing the verification details of a proof under the given namespace.
+* **Vec**: A vector of VerifyResult objects, each representing the verification details of a proof under the given namespace.
 
 **Example Usage**:
 
 ```rust
-const NODE: &str = "http://54.65.75.57:9090";
+const NODE: &str = "http://127.0.0.1:9090";
 const NAMESPACE: &str = "test-namespace";
 let query_client = QueryClient::new(NODE);
 let get_verify_results = query_client.get_verify_result_by_namespace(NAMESPACE).await;
 ```
 
-<h4>5. submit_community_verification</h4>
+#### 5. submit\_community\_verification
 
 **Description**: allows a community member to submit their verification result for a specific proof in the Fiamma network.
 
@@ -199,7 +200,7 @@ pub struct MsgSubmitCommunityVerification {
 ```rust
 const SENDER_PRIVATE_KEY: &str =
 "59514b4e9c63b91cc9d3b6b882f1c5ee7449890c7c1116782670c71c96957897";
-const NODE: &str = "http://54.65.75.57:9090";
+const NODE: &str = "http://127.0.0.1:9090";
 const BITVM_PROOF_SYSTEM: &str = "GROTH16_BN254_BITVM";
 const NAMESPACE: &str = "test-namespace";
 let proof_id = "8a17276c37500fe1f0b277f21205592eac037b60f8a7021713ed2b99fe4f78f2";
@@ -218,7 +219,7 @@ let resp = tx_client
     .unwrap();
 ```
 
-<h4>6. create_staker</h4>
+#### 6. create\_staker
 
 **Description**: Adds a new validator to the Fiamma network.
 
@@ -239,7 +240,7 @@ pub struct MsgCreateStaker {
 ```rust
 const SENDER_PRIVATE_KEY: &str =
 "59514b4e9c63b91cc9d3b6b882f1c5ee7449890c7c1116782670c71c96957897";
-const NODE: &str = "http://54.65.75.57:9090";
+const NODE: &str = "http://127.0.0.1:9090";
 let wallet = Wallet::new(SENDER_PRIVATE_KEY);
 let gas_limit = 80_000_000_u64;
 let fee = 2000_u128;
@@ -251,7 +252,7 @@ let msg = MsgCreateStaker {
 let resp = tx_client.create_staker(msg).await;
 ```
 
-<h4>7. remove_staker</h4>
+#### 7. remove\_staker
 
 **Description**: Deletes an existing validator from the Fiamma network.
 
@@ -272,7 +273,7 @@ pub struct MsgRemoveStaker {
 ```rust
 const SENDER_PRIVATE_KEY: &str =
 "59514b4e9c63b91cc9d3b6b882f1c5ee7449890c7c1116782670c71c96957897";
-const NODE: &str = "http://54.65.75.57:9090";
+const NODE: &str = "http://127.0.0.1:9090";
 let wallet = Wallet::new(SENDER_PRIVATE_KEY);
 let gas_limit = 80_000_000_u64;
 let fee = 2000_u128;
@@ -284,7 +285,7 @@ let msg = MsgRemoveStaker {
 let resp = tx_client.remove_staker(msg).await;
 ```
 
-<h4>8. get_account_info</h4>
+#### 8. get\_account\_info
 
 **Description**: contains all the necessary fields for basic account functionality. **Parameters**: An instance of the `Wallet` struct created with the `PRIVATE_KEY`. This wallet will manage the user's account and facilitate interactions with the Fiamma blockchain.
 
@@ -293,12 +294,12 @@ let resp = tx_client.remove_staker(msg).await;
 ```rust
 const SENDER_PRIVATE_KEY: &str =
 "59514b4e9c63b91cc9d3b6b882f1c5ee7449890c7c1116782670c71c96957897";
-const NODE: &str = "http://54.65.75.57:9090";
+const NODE: &str = "http://127.0.0.1:9090";
 let wallet = Wallet::new(PRIVATE_KEY);
 let account_info = wallet.get_account_info(NODE.to_string()).await;
 ```
 
-<h4>9. get_proof_data</h4>
+#### 9. get\_proof\_data
 
 **Description**: Retrieves the necessary proof data from the Fiamma blockchain.
 
@@ -318,21 +319,24 @@ pub struct ProofData {
     pub public_input: ::prost::alloc::vec::Vec<u8>,
     #[prost(bytes = "vec", tag = "4")]
     pub vk: ::prost::alloc::vec::Vec<u8>,
-    #[prost(string, tag = "5")]
+    #[prost(enumeration = "DataLocation", tag = "5")]
+    pub data_location: i32,
+    #[prost(string, tag = "6")]
     pub namespace: ::prost::alloc::string::String,
 }
+
 ```
 
 **Example Usage**:
 
 ```rust
-const NODE: &str = "http://54.65.75.57:9090";
+const NODE: &str = "http://127.0.0.1:9090";
 let proof_id = "1776686b821785672155f4f34a0cf0d088e721e3ec5ff32709a7cec1b5a3b669";
 let query_client = QueryClient::new(NODE);
 let proof_data = query_client.get_proof_data(proof_id).await;
 ```
 
-<h4>10. get_bitvm_challenge_data</h4>
+#### 10. get\_bitvm\_challenge\_data
 
 **Description**: Retrieves the challenge data related to a specific BitVM proof or transaction.
 
@@ -342,23 +346,14 @@ let proof_data = query_client.get_proof_data(proof_id).await;
 
 **Response**:
 
-* **verify\_result** (`bool`): Indicates whether the verification of the challenge was successful.
 * **witness** (`Vec<u8>`): Contains the witness data needed for the proof validation process.
-* **vk** (`Vec<u8>`): Represents the verification key used in the proof system.
-* **public\_input** (`Vec<u8>`): Holds the public input data required for the challenge.
 * **proposer** (`String`): Specifies the account or entity that proposed the challenge.
 
 ```rust
 pub struct BitVmChallengeData {
-    #[prost(bool, tag = "1")]
-    pub verify_result: bool,
-    #[prost(bytes = "vec", tag = "2")]
+    #[prost(bytes = "vec", tag = "1")]
     pub witness: ::prost::alloc::vec::Vec<u8>,
-    #[prost(bytes = "vec", tag = "3")]
-    pub vk: ::prost::alloc::vec::Vec<u8>,
-    #[prost(bytes = "vec", tag = "4")]
-    pub public_input: ::prost::alloc::vec::Vec<u8>,
-    #[prost(string, tag = "5")]
+    #[prost(string, tag = "2")]
     pub proposer: ::prost::alloc::string::String,
 }
 ```
@@ -366,30 +361,30 @@ pub struct BitVmChallengeData {
 **Example Usage**:
 
 ```rust
-const NODE: &str = "http://54.65.75.57:9090";
+const NODE: &str = "http://127.0.0.1:9090";
 let proof_id = "1776686b821785672155f4f34a0cf0d088e721e3ec5ff32709a7cec1b5a3b669";
 let query_client = QueryClient::new(NODE);
 let bitvm_challenge_data = query_client.get_bitvm_challenge_data(proof_id).await;
 ```
 
-<h4>11. get_pending_proof</h4>
+#### 11. get\_pending\_proof
 
 **Description**: Retrieves a list of proofs that are currently awaiting verification. This is useful for community members or validators who want to access pending tasks and perform verifications.
 
 **Response**:
 
-* **Vec<VerifyResult>**: A vector of VerifyResult objects that are currently pending verification.
+* **Vec**: A vector of VerifyResult objects that are currently pending verification.
 
 **Example Usage**:
 
 ```rust
-const NODE: &str = "http://54.65.75.57:9090";
+const NODE: &str = "http://127.0.0.1:9090";
 const NAMESPACE: &str = "test-namespace";
 let query_client = QueryClient::new(NODE);
 let get_pending_proof = query_client.get_pending_proof().await;
 ```
 
-<h4>12. get_pending_proof_by_namespace</h4>
+#### 12. get\_pending\_proof\_by\_namespace
 
 **Description**: Retrieves a list of proofs that are currently awaiting verification for a specific namespace. This is useful for community members or validators who want to access pending tasks and perform verifications.
 
@@ -399,14 +394,13 @@ let get_pending_proof = query_client.get_pending_proof().await;
 
 **Response**:
 
-* **Vec<VerifyResult>**: A vector of VerifyResult objects that are currently pending verification under the given namespace.
+* **Vec**: A vector of VerifyResult objects that are currently pending verification under the given namespace.
 
 **Example Usage**:
 
 ```rust
-const NODE: &str = "http://54.65.75.57:9090";
+const NODE: &str = "http://127.0.0.1:9090";
 const NAMESPACE: &str = "test-namespace";
 let query_client = QueryClient::new(NODE);
 let get_pending_proof_by_namespace = query_client.get_pending_proof_by_namespace(NAMESPACE).await;
 ```
-
