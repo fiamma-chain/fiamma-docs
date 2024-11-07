@@ -349,14 +349,15 @@ let proof_data = query_client.get_proof_data(proof_id).await;
 * **witness** (`Vec<u8>`): Contains the witness data needed for the proof validation process.
 * **proposer** (`String`): Specifies the account or entity that proposed the challenge.
 
-```rust
-pub struct BitVmChallengeData {
-    #[prost(bytes = "vec", tag = "1")]
-    pub witness: ::prost::alloc::vec::Vec<u8>,
-    #[prost(string, tag = "2")]
+<pre class="language-rust"><code class="lang-rust"><strong>pub struct BitVmChallengeData {
+</strong>    #[prost(bytes = "vec", tag = "1")]
+    pub witness: ::prost::alloc::vec::Vec&#x3C;u8>,
+    #[prost(bytes = "vec", tag = "2")]
+    pub vk: ::prost::alloc::vec::Vec&#x3C;u8>,
+    #[prost(string, tag = "3")]
     pub proposer: ::prost::alloc::string::String,
 }
-```
+</code></pre>
 
 **Example Usage**:
 
