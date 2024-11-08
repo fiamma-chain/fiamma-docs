@@ -8,7 +8,7 @@
       * [Challenges Tackled](our-product-suite/readme/introduction/why-fiamma.md)
       * [Core Technologies](our-product-suite/readme/introduction/advancing-industry-development.md)
     * [Fiamma Architecture](our-product-suite/readme/fiamma-architecture/README.md)
-      * [General Flow](our-product-suite/readme/fiamma-architecture/general-flow/README.md)
+      * [General Flow (Soft Finality)](our-product-suite/readme/fiamma-architecture/general-flow/README.md)
         * [For Programmable Blockchains](our-product-suite/readme/fiamma-architecture/general-flow/for-programmable-blockchains.md)
         * [For Non-Programmable Blockchains :](our-product-suite/readme/fiamma-architecture/general-flow/for-non-programmable-blockchains.md)
       * [ZKP Verification Process](our-product-suite/readme/fiamma-architecture/handling-and-verification-of-zero-knowledge-proofs-and-cross-chain-interactions.md)

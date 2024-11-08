@@ -1,13 +1,13 @@
 # For Non-Programmable Blockchains :
 
-<figure><img src="../../../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Fig2. The general flow of applications on Bitcoin</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/whiteboard_exported_image (17).png" alt=""><figcaption><p>Fig2. The general flow of applications on Bitcoin</p></figcaption></figure>
 
 #### Components Involved:
 
 1. **Fiamma:** The core network handling the verification of ZKPs.
 2. **Data Availability (DA) Layer:** Stores proof-related data securely.
 3. **Bitcoin:** Executes scripts to verify data and signatures.
-4. **Various ZKP Systems:** Includes Fflonk, Boojum, Stark, and others.
+4. **Check Contracts for Various ZKP Systems:** Includes Fflonk, Boojum, Stark, and others.
 
 #### Steps:
 
@@ -38,7 +38,3 @@
   * **Check Script Execution:** The scripts on Bitcoin perform checks on `DA Check` and `Sig Check` to verify the data and signatures.
   * **Final State Update:** Once the checks are successful, the final state is updated on the Bitcoin network.
 
-#### Step 5: Kick off Transaction
-
-* **Fiamma:**
-  * **Kick off Transaction:** If necessary, Fiamma initiates the transaction based on the verified data and results.

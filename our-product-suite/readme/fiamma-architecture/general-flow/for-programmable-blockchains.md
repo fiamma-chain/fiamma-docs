@@ -7,7 +7,7 @@
 1. **Fiamma:** The core network handling the verification of ZKPs.
 2. **Data Availability (DA) Layer:** Stores proof-related data securely.
 3. **Ethereum:** Executes smart contracts to verify data and signatures.
-4. **Various ZKP Systems:** Includes Boojum, Plonky2, Circle Stark, and others.
+4. **Check Contracts for Various ZKP Systems:** Includes Boojum, Plonky2, Circle Stark, and others.
 
 ### Steps:
 

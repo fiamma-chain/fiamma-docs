@@ -1,11 +1,12 @@
 ---
 description: >-
   The following diagram illustrates the comprehensive workflow of the Fiamma
-  chain, highlighting the processes involved in handling and verifying
-  Zero-Knowledge Proofs (ZKP) and the interactions between
+  verification layer.
 ---
 
 # ZKP Verification Process
+
+
 
 <figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption><p>Fig4. Sequence diagram for the Fiamma network</p></figcaption></figure>
 
@@ -14,7 +15,7 @@ description: >-
 * **Public Chains:** These are the major blockchain networks like Bitcoin and Ethereum, where final transactions and state updates are recorded.
 * **ZK Apps:** Applications that generate and aggregate Zero-Knowledge Proofs, ensuring privacy and integrity of transactions.
 * **Objective Nodes:** Nodes participating in the Proof-of-Stake consensus mechanism to validate proofs.
-* **Intersubjective Nodes :** User-operated nodes run on mobile devices involved in validating, submitting, and verifying proofs.
+* **Intersubjective Nodes :** User-operated nodes run on mobile devices involved in fetching,  verifying, and submitting proofs.
 * **Fiamma Chain:** The core network handling the verification of Zero-Knowledge Proofs built with Cosmos SDK
 * **DA :** Data Availability layer that stores proof-related data securely.
 * **Staking:** Mechanism within the Fiamma ecosystem responsible for staking operations and state updates.
