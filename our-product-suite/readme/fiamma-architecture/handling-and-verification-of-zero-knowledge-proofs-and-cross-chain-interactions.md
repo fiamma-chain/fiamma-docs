@@ -5,9 +5,9 @@ description: >-
   Zero-Knowledge Proofs (ZKP) and the interactions between
 ---
 
-# Handling and Verification of Zero-Knowledge Proofs and Cross-Chain Interactions
+# ZKP Verification Process
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption><p>Fig4. Sequence diagram for the Fiamma network</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption><p>Fig4. Sequence diagram for the Fiamma network</p></figcaption></figure>
 
 ## Components
 

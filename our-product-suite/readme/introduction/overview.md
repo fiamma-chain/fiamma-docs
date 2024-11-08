@@ -1,16 +1,14 @@
-# Overview
-
-## **Key Highlights:**
+# Key Highlights
 
 ### **Triple Security Model**
 
+* **Bitcoin network security:** By implementing BitVM2, Fiamma pioneers in verifying ZK proofs with fraud proofs on the Bitcoin network. Our intersubjective nodes invoke optimistic ZKP verification on Bitcoin to settle disputes if any.
 * **Bitcoin cryptoeconomic security:** Secured by Babylon, Fiamma chain leverages the immense cryptoeconomic security of Bitcoin network in ZKP verification in all ecosystems.
 * **Decentralized and permissionless security:** Our intersubjective nodes running on mobile devices further decentralize our POS chain and help both Fiamma and Babylon identify intersubjectively attributable faults.
-* **Bitcoin network security:** By implementing Bitvm2, Fiamma pioneers in verifying ZK proofs with fraud proofs on the Bitcoin network. Our intersubjective nodes invoke optimistic ZKP verification on Bitcoin to settle disputes if any.
 
 ### **Cost-Effective and Instant ZK Verification**
 
-Built on Cosmos SDK, Fiamma provides fast proof verification, reducing verification time from hours to seconds, and achieves \~99% cost reduction by checking multisigs securely.
+Built on Cosmos SDK, Fiamma provides fast proof verification, reducing verification time from hours to seconds, and achieves \~99% cost reduction by checking signatures securely.
 
 ### **Universal Compatibility**
 

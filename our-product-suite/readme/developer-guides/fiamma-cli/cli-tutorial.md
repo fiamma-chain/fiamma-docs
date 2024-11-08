@@ -1,7 +1,7 @@
 ---
 description: >-
-  In this tutorial, you will learn how to use the Fiammad Command Line Interface(CLI) to
-  send requests related to zkpverify.
+  In this tutorial, you will learn how to use the Fiammad Command Line
+  Interface(CLI) to send requests related to zkpverify.
 ---
 
 # CLI Tutorial
@@ -23,6 +23,7 @@ cd fiamma
 
 git checkout <release-version>
 ```
+
 ## ZKPVerify Module
 
 ### 1. Send your proof to Fiamma network
@@ -75,7 +76,7 @@ When you submit a proof, you will receive a transaction hash. Typically, if the 
 fiammad query tx 65C110AE8E0624AC34CC1F7E36E253B3437B28E008433AE499DEF40D770A1915 --node https://testnet-rpc.fiammachain.io
 ```
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>SubmitProof event</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image.png" alt=""><figcaption><p>SubmitProof event</p></figcaption></figure>
 
 * **Get Proof Id by Manual/Code Calculation**
 
@@ -102,9 +103,9 @@ allDataHex="${NEW_NAMESPACE}${NEW_PROOF_SYSTEM}${NEW_PROOF}${NEW_PUBLIC_INPUT}${
 echo -n "$allDataHex" | xxd -r -p | sha256sum | awk '{print $1}'
 ```
 
-### 3. Submit community verification to Fiamma network&#x20;
+### 3. Submit community verification to Fiamma network
 
-The community verification need an proof id and verification result.&#x20;
+The community verification need an proof id and verification result.
 
 submit community verification:
 
@@ -390,6 +391,7 @@ fiammad tx bitvmstaker remove-staker \
   --chain-id fiamma-testnet-1  \
   --node https://testnet-rpc.fiammachain.io
 ```
+
 ### 7. Update committee addresses
 
 You can update the address of the committee responsible for overseeing the blockchain operations or specific proof systems in the fiamma network.

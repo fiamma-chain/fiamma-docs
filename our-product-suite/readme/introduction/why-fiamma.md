@@ -1,9 +1,9 @@
-# Tackling Key Industry Challenges
+# Challenges Tackled
 
 **Centralization of Off-Chain State Verification**:
 
 * Fiamma consists of both objective POS node module and interrsubjective mobile node module.
-* The discrepancy between the results of intersubjective and objective node module would be settled by Bitcoin network via BitVM2.
+* The discrepancy between the results of intersubjective and objective node modules would be settled by Bitcoin network via BitVM2.
 * By this approach, Fiamma eliminates the reliance on a single sequencer, thus preventing a single point of failure and promoting a more democratic verification process.
 
 **Latency in On-Chain State Verification**:
@@ -12,7 +12,7 @@
 
 **High Costs of On-Chain State Verification**:
 
-* With high costs ranging significantly across different ZK proof algorithms (e.g., Groth at 250,000, Halo2-KZG at 400,000, and STARK-FRI at 1,500,000), Fiamma reduces these expenses by over 90%, making ZK proof verification more accessible.
+* With high costs ranging significantly across different ZK proof algorithms (e.g., Groth at 250,000, Halo2-KZG at 400,000, and STARK-FRI at 1,500,000), Fiamma reduces these expenses by over 99%, making ZK proof verification more accessible.
 
 **Limited Compatibility with ZK Verification Algorithms**:
 

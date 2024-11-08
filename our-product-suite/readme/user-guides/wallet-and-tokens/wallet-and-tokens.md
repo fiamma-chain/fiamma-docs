@@ -19,7 +19,7 @@ Visit [https://chains.keplr.app](https://chains.keplr.app) search for "**Fiamma 
 
 Add "**Fiamma Testnet**" Chain to Keplr:
 
-<figure><img src="../../.gitbook/assets/fia-keplr.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/fia-keplr.png" alt=""><figcaption></figcaption></figure>
 
 ## Create a Wallet with Fiamma Address
 
@@ -27,18 +27,18 @@ Open the Keplr wallet extension, click the user avatar in the top right corner, 
 
 Add Wallet in Keplr:
 
-<figure><img src="../../.gitbook/assets/select-wallet.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/select-wallet.png" alt=""><figcaption></figcaption></figure>
 
 On the new page, choose "**Create a new wallet**". If you want to import an existing wallet from fiamma-node, please refer to [Manage Keys](../manage-keys.md).
 
 Create a new wallet:
 
-<figure><img src="../../.gitbook/assets/create-new-wallet.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/create-new-wallet.png" alt=""><figcaption></figcaption></figure>
 
 Then follow the steps to sign in and set a custom name for your wallet. In the third step, select the chain for your wallet. Search for "**Fiamma Testnet**" and check the box to confirm.
 
 Select "**Fiamma Testnet" Chain**:
 
-<figure><img src="../../.gitbook/assets/select-fiamma.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/select-fiamma.png" alt=""><figcaption></figcaption></figure>
 
 You will now see your Fiamma address in the Keplr wallet. To get testnet FIA from our faucet, please refer to [Get FIA](wallet-and-tokens-1.md).
