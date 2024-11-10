@@ -36,6 +36,6 @@ cd fiamma/script/cli
 
 After you submit the transaction in the manner described in step 4, you can use the scripts in scirpt/cli to query and verify the results.
 
-```
+```bash
 ./query_verify_result.sh
 ```
