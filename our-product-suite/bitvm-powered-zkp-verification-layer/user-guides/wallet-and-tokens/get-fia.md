@@ -14,8 +14,8 @@ Get your testnet token FIA for development and testing
 
 In Fiamma DA Alpha Testnet, users can receive FIA tokens through two methods: the Discord channel and the web faucet. Each method has its own limits and conditions, and these two methods are not mutually exclusive.
 
-* **Discord Faucet**: Each address/Discord ID can receive **0.05 FIA** per day, but each address can only claim once every 24 hours.
-* **Web Faucet**: Each address can receive **0.03 FIA** daily, but each device can only claim once every 24 hours.
+* **Discord Faucet**: Each address/Discord ID can receive **1 FIA** per day, but each address can only claim once every 24 hours.
+* **Web Faucet**: Each address can receive **0.5 FIA** daily, but each device can only claim once every 24 hours.
 
 {% hint style="info" %}
 **Note**: The tokens of the faucet will dynamically adjust based on supply and demand conditions. The provided tokens should be sufficient to cover gas fees under normal circumstances, so please use them wisely. If you need more FIA, please contact the [Fiamma team](https://app.gitbook.com/u/6g4AtPl7qkgj2hKuTiFRQ7DXCXD2).
