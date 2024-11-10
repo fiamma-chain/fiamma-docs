@@ -43,9 +43,10 @@ fiammad tx zkpverify submit-proof \
   <proof> \
   <public_input> \
   <vk>
+  <data_location>
 ```
 
-The current Fiamma network chain-id is `fiamma-testnet-1`, the namespace is `test-namespace`, the proof system is **`GROTH16_BN254_BITVM`** or **`FFPLONK_BN254_BITVM`** and the node is [https://testnet-rpc.fiammachain.io](https://testnet-rpc.fiammachain.io).
+The current Fiamma network chain-id is `fiamma-testnet-1`, the namespace is `test-namespace`, the data\_location should be **FIAMMA** , the proof system is **`GROTH16_BN254_BITVM`** or **`FFPLONK_BN254_BITVM`** and the node is [https://testnet-rpc.fiammachain.io](https://testnet-rpc.fiammachain.io).
 
 **Example** Proof system use **GROTH16\_BN254\_BITVM**.
 
@@ -62,6 +63,7 @@ fiammad tx zkpverify submit-proof \
   ./prover_examples/bitvm/proof.bitvm \
   ./prover_examples/bitvm/public_input.bitvm \
   ./prover_examples/bitvm/vk.bitvm
+  "FIAMMA"
 ```
 
 ### 2. Get Proof id
