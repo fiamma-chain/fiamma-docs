@@ -41,4 +41,4 @@ Select "**Fiamma Testnet" Chain**:
 
 <figure><img src="../../../../.gitbook/assets/select-fiamma.png" alt=""><figcaption></figcaption></figure>
 
-You will now see your Fiamma address in the Keplr wallet. To get testnet FIA from our faucet, please refer to [Get FIA](wallet-and-tokens-1.md).
+You will now see your Fiamma address in the Keplr wallet. To get testnet FIA from our faucet, please refer to [Get FIA](get-fia.md).

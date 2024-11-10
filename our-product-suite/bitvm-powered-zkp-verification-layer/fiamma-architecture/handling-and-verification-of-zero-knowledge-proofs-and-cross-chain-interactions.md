@@ -8,15 +8,15 @@ description: >-
 
 
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption><p>Fig4. Sequence diagram for the Fiamma network</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/whiteboard_exported_image (18).png" alt=""><figcaption><p>Fig4. Sequence diagram for the Fiamma network</p></figcaption></figure>
 
 ## Components
 
 * **Public Chains:** These are the major blockchain networks like Bitcoin and Ethereum, where final transactions and state updates are recorded.
 * **ZK Apps:** Applications that generate and aggregate Zero-Knowledge Proofs, ensuring privacy and integrity of transactions.
 * **Objective Nodes:** Nodes participating in the Proof-of-Stake consensus mechanism to validate proofs.
-* **Intersubjective Nodes :** User-operated nodes run on mobile devices involved in fetching,  verifying, and submitting proofs.
-* **Fiamma Chain:** The core network handling the verification of Zero-Knowledge Proofs built with Cosmos SDK
+* **Intersubjective Nodes :** User-operated nodes run on mobile devices involved in fetching, verifying, and submitting proofs.
+* **Fiamma Chain:** The core network handling the verification of Zero-Knowledge Proofs built with Cosmos SDK.
 * **DA :** Data Availability layer that stores proof-related data securely.
 * **Staking:** Mechanism within the Fiamma ecosystem responsible for staking operations and state updates.
 * **Finalize:** Finalization layer where transactions and state updates are recorded on the Bitcoin blockchain.
@@ -27,7 +27,7 @@ description: >-
 
 * **ZK Apps:**
   * Submit individual proofs to the Fiamma network.
-    * **Aggregate Proofs(Optional):** Aggregate proofs before submission to save costs. Note that this can increase the processing time from seconds to hours depending on the situation.
+    * **Aggregate Proofs (Optional):** Aggregate proofs before submission to save costs. Note that this can increase the processing time from seconds to hours depending on the situation.
 
 **Step 2:Objective Finality and Consensus**
 
