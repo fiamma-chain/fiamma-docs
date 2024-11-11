@@ -9,17 +9,18 @@ description: >-
 ### Step 1: Install Golang <a href="#step-1-install-golang" id="step-1-install-golang"></a>
 
 {% hint style="info" %}
-Fiamma requires Golang [version 1.22.3](https://go.dev/doc/install) for Fiamma to be installed on your system. Install it using the instructions on the provided link.
+Fiamma requires Golang [version 1.23.3](https://go.dev/doc/install) for Fiamma to be installed on your system. Install it using the instructions on the provided link.
 {% endhint %}
 
 For Linux server installation of Go language, you can refer to the commands below, and for installation tutorials of Go language on other operating systems, you can refer to the official[ Go language documentation.](https://go.dev/doc/install)
 
 ```
-wget https://golang.org/dl/go1.22.3.linux-amd64.tar.gz
-sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.22.3.linux-amd64.tar.gz
+wget https://golang.org/dl/go1.23.3.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.3.linux-amd64.tar.gz
 echo 'export GOROOT=/usr/local/go' >> ~/.profile
 echo 'export GOPATH=$HOME/go' >> ~/.profile
-echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> ~/.profile
+echo 'export GOBIN=$HOME/go/bin' >> ~/.profile
+echo 'export PATH=$PATH:$GOROOT/bin:$GOBIN' >> ~/.profile
 source ~/.profile
 ```
 
