@@ -26,6 +26,7 @@
       * [Fiamma CLI](our-product-suite/bitvm-powered-zkp-verification-layer/developer-guides/fiamma-cli/README.md)
         * [CLI Command Overview](our-product-suite/bitvm-powered-zkp-verification-layer/developer-guides/fiamma-cli/cli-command-overview.md)
         * [CLI Tutorial](our-product-suite/bitvm-powered-zkp-verification-layer/developer-guides/fiamma-cli/cli-tutorial.md)
+      * [Fiamma-Committee CLI](our-product-suite/bitvm-powered-zkp-verification-layer/developer-guides/fiamma-committee-cli.md)
       * [Run a Fiamma Node](our-product-suite/bitvm-powered-zkp-verification-layer/developer-guides/run-a-fiamma-node/README.md)
         * [Set up a Node](our-product-suite/bitvm-powered-zkp-verification-layer/developer-guides/run-a-fiamma-node/set-up-a-node.md)
         * [Getting Testnet Tokens](our-product-suite/bitvm-powered-zkp-verification-layer/developer-guides/run-a-fiamma-node/getting-testnet-tokens.md)
