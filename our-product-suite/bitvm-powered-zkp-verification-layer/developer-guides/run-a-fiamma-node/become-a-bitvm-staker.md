@@ -17,95 +17,13 @@ This guide assumes you have some familiarity with Bitcoin wallets and general Bi
 
 Ensure you have Rust installed on your system. You can [**install Rust**](https://www.rust-lang.org/learn/get-started) from the official Rust website[.](https://www.rust-lang.org/learn/get-started)
 
-## &#x20;Step 1: Installation Fiamma Committee CLI
+## Step 1: Installation Fiamma Committee CLI
 
-Fiamma Committee CLI is a BTC Staking Command Line Tool for BITVM2 Challenges on the Fiamma Chain.
+You can refer to this [installation](../fiamma-committee-cli.md#installation) step to install the Fiamma Committee CLI.
 
-### From GitHub Releases
+## Step 2: Register as a Staker
 
-1. Visit the [GitHub Releases page](https://github.com/fiamma-chain/fiamma-committee-cli/releases).
-2. Download the binary file for your operating system:
-   * Linux x86-64: `fcli-linux-x86-64`
-   * macOS Intel: `fcli-mac-intel`
-   * macOS Apple Silicon (M1/M2): `fcli-mac-arm`
-   * Windows: `fcli-windows.exe`
-3. Rename the downloaded file:
-   * On Linux and macOS, rename to `fcli`
-   * On Windows, rename to `fcli.exe`
-4. Move the renamed file to a directory in your PATH.
-
-For example, on Linux or macOS:
-
-```bash
-mv fcli-linux-x86-64 fcli # or fcli-mac-intel or fcli-mac-arm   
-chmod +x fcli
-sudo mv fcli /usr/local/bin/
-```
-
-On Windows, move `fcli.exe` to a directory in your PATH, such as `C:\Windows\System32\`.
-
-### Building from Source
-
-To build the CLI from source, ensure you have Rust and Cargo installed. Then follow these steps:
-
-1. Clone the repository:
-
-```
-git clone https://github.com/fiamma-chain/fiamma-committee-cli.git
-cd fiamma-committee-cli
-```
-
-2. Build the project:
-
-```
-cargo build --release
-```
-
-3. After building, you can find the binary in the `target/release` directory.
-
-## Step 2: Obtain btc UTXO Information (optional)
-
-Before proceeding with the registration, you need to obtain a usable UTXO from your Bitcoin wallet. We use bitcoin-cli as example (_This could be different in other Bitcoin wallet_):
-
-1.  **List Unspent Transactions**:
-
-    ```bash
-    bitcoin-cli listunspent
-    ```
-
-    This will list all unspent transactions. Look for a UTXO that you want to use and note the `txid` and `vout`. Make sure the UTXO has enough amount balance for stake.
-2.  **Dump the Private Key**:
-
-    ```bash
-    bitcoin-cli dumpprivkey <your-bitcoin-address>
-    ```
-
-    Replace `<your-bitcoin-address>` with the address corresponding to the UTXO you selected. This command will output the private key associated with that address.
-
-## Step 3: Register as a Staker
-
-Use the `fcli` tool to register as a staker with the obtained UTXO information. The registration process requires the use of the following 2 commands to complete.
-
-```bash
-fcli register --network testnet start --validator-key <VALIDATOR_KEY> --txid <TXID> --vout <VOUT> --private-key <PRIVATE_KEY>
-```
-
-**After the above command has finished executing, wait 5-10 minutes for the corresponding signed transactions to be generated, and then execute the following command.**
-
-```bash
-fcli register --network testnet finish --validator-key <VALIDATOR_KEY> --private-key <PRIVATE_KEY>
-```
-
-Replace `network` `<validator_key>`, `<txid>`, `<vout>`, `<private-key>`, `<rpc-user>`, and `<rpc-password>` with the appropriate values.
-
-### Explanation of Command Parameters
-
-* `--network`:Specifies the committee service network and Bitcoin RPC service. It can be `local` for local testing or `dev` for the testnet, or `main` for the mainnet.
-* `register`: The subcommand used to register.
-* `--validator_key`: Specifies the Fiamma `validator_key`. Ensure the format is correct. Refer to [Show your  Validator Addr ](become-a-validator.md#id-5-verify-your-validator)section on obtaining the `validator_key`. The validator key should have a prefix of `fiammavaloper`.
-* `--txid`: Specifies the transaction ID of a UTXO in Bitcoin we did in step 3. This transaction must be associated with the private key specified by `-s`.
-* `--vout`: Specifies which output of the UTXO to use as we did in step 3, e.g., `0`.
-* `--private-key`: Specifies the private key of Bitcoin account.
+You can refer to [Registration Instructions](../fiamma-committee-cli.md#register-as-a-bitvm2-staker-validator)  to register as a bitvm2 staker.
 
 ### Expected Output
 
@@ -116,4 +34,4 @@ You have submitted your registration application.
 The registration number is 6, please wait patiently.
 ```
 
-Now the Bitcoin transaction is staked, we have successfully register validator\_key as BitVM staker.
+wait the Bitcoin transaction is confimed, we have successfully register validator\_key as BitVM staker.
