@@ -7,9 +7,9 @@ description: >-
 
 # Introduction
 
-### What is a Trustless Bitcoin Bridge? <a href="#what-is-a-trustless-bitcoin-bridge" id="what-is-a-trustless-bitcoin-bridge"></a>
+### What Is a Trustless Bitcoin Bridge?&#x20;
 
-Our trustless Bitcoin bridge provides secure, permissionless transfers of BTC between Bitcoin and sidechains. It ensures:Comment
+Our trustless Bitcoin bridge provides secure, permissionless transfers of BTC between Bitcoin and sidechains. It ensures:
 
 1. **Locked BTC Safety**: User's BTC remains secure, without unilateral control by any entity.&#x20;
 2. **Trustless PEG-IN**: Bitcoin to sidechain transfers are fully permissionless.&#x20;
@@ -35,3 +35,16 @@ To receive wrapped BTC on the sidechain, our system verifies transactions throug
 
 1. **General Mode**: Users initiate BTC transfers back to Bitcoin. The system verifies transactions for legitimacy, preventing fraudulent claims by operators through challenge periods with zero-knowledge proof (ZKP) verifications.
 2. **Forced Exit Mode**: If the bridge or operator is down, users can withdraw BTC directly, with protections in place to penalize invalid claims.
+
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+### **Key Features and Security Levels**
+
+* **Locked BTC**: Secured with multisignature authorization.
+* **PEG-IN**: Trust-minimized with light client verification, ensuring permissionless operations.
+* **PEG-OUT**: Fully trustless and permissionless, with user-centric protections in place.
+
+### **Efficiency and Future Enhancements**
+
+To reduce transaction times, our ZKP verification layer ensures prompt and final verification, aiming to reduce the current 7-day challenge period to a few hours. We are also working to support variable BTC amounts with a new liquidity provider design to increase bridge flexibility.
+
