@@ -75,9 +75,7 @@ So for operator B, it could only pay 50BTC. For other users, they can not PEG-OU
 
 To solve this problem, we introduce the forced exit module for users. The general idea is the user will pre-sign a few additional transactions with the bridge committee but not specify the receiver (SIGHHASH_NONE). But the condition is, that the user has to provide a valid proof for the burn transaction, otherwise, he cannot take the BTC back
 
-<p align = "center">
-<figure><img src="../../.gitbook/assets/fungible_9.png" width = "400" /><figcaption></figcaption></figure>
-</p>
+<figure><img src="../../.gitbook/assets/fungible_9.png" width = "400" div align=center/><figcaption></figcaption></figure>
 
 A more radical approach:
 
