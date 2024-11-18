@@ -23,7 +23,7 @@ For PEG-OUT, we rely on Bitcoin. However, limitations in Bitcoin's programmabili
 
 Additionally, we aim to avoid introducing trust outside the Bitcoin network. Therefore, PEG-OUT processes are relatively complex. Below is the envisioned final version of the bridge design.
 
-<figure><img src="../../.gitbook/assets/bridge_overview.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/bridge_overview.png" width = "600" /><figcaption></figcaption></figure>
 
 For cross-chain transactions, two key aspects must be ensured:
 1. Execution validity: Validity of transaction execution
@@ -69,17 +69,17 @@ Recursive proofs possess excellent compression properties; the size of the proof
 1. The dynamic changes in scripts, leading to the transformation of taproot addresses;
 2. This implies more data is disclosed on Bitcoin, gradually increasing costs.
 
-<figure><img src="../../.gitbook/assets/chain proof_1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/chain proof_1.png" width = "600" /><figcaption></figcaption></figure>
 
 Solutions:
 
 1. Increase hash circuits on the prover's side, using only the hash output as the public input. This ensures the proof size remains constant while also stabilizing the size of the public input.
 
-<figure><img src="../../.gitbook/assets/chain proof_2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/chain proof_2.png" width = "600" /><figcaption></figcaption></figure>
 
 2. K-depth confirmation: To ensure the verification of the longest chain, it is necessary to ensure that there are K blocks following a given block.This requires us to consistently make the current block and the information of the k-th block publicly available as public info for verification in scripts to check if a block has K confirmations (Check height_k - height_0 = k). (This is a requirement for the prover to set the information of the last K blocks as public input attributes.)
 
-<figure><img src="../../.gitbook/assets/chain proof_3.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/chain proof_3.png" width = "600" /><figcaption></figcaption></figure>
 
 # Proof Aggregation
 

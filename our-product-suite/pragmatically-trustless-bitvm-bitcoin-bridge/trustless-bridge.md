@@ -22,7 +22,7 @@ Our trustless Bitcoin bridge provides secure, permissionless transfers of BTC be
 
 
 
-<figure><img src="../../.gitbook/assets/whiteboard_exported_image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/whiteboard_exported_image (9).png" width = "600" /><figcaption></figcaption></figure>
 
 ## PEG-IN Process (Bitcoin to Sidechain)
 
@@ -31,14 +31,14 @@ To receive wrapped BTC on the sidechain, our system verifies transactions throug
 1. **Incorrect Minting**: The Mint contract checks the validity of transactions on Bitcoin, ensuring that only authentic BTC transactions allow minting on the sidechain.
 2. **Relayer Issues**: Users can directly submit valid data for minting if relayers are unavailable. Security is maintained by a slashing mechanism, with decentralized or permissionless relayers depending on the chain.
 
-<figure><img src="../../.gitbook/assets/whiteboard_exported_image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/whiteboard_exported_image (10).png" width = "600" /><figcaption></figcaption></figure>
 
 ## PEG-OUT Process (Sidechain to Bitcoin)
 
 1. **General Mode**: Users initiate BTC transfers back to Bitcoin. The system verifies transactions for legitimacy, preventing fraudulent claims by operators through challenge periods with zero-knowledge proof (ZKP) verifications.
 2. **Forced Exit Mode**: If the bridge or operator is down, users can withdraw BTC directly, with protections in place to penalize invalid claims.
 
-<figure><img src="../../.gitbook/assets/whiteboard_exported_image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/whiteboard_exported_image (11).png" width = "600" /><figcaption></figcaption></figure>
 
 ## Key Features and Security Levels
 
