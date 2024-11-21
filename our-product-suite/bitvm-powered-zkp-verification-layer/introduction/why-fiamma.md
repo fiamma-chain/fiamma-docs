@@ -2,7 +2,7 @@
 
 **Centralization of Off-Chain State Verification**:
 
-* Fiamma consists of both objective POS node module and interrsubjective mobile node module.
+* Fiamma consists of both objective POS node module and intersubjective mobile node module.
 * The discrepancy between the results of intersubjective and objective node modules would be settled by Bitcoin network via BitVM2.
 * By this approach, Fiamma eliminates the reliance on a single sequencer, thus preventing a single point of failure and promoting a more democratic verification process.
 

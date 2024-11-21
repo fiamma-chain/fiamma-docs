@@ -1,6 +1,6 @@
 ---
 description: >-
-  A temporary Flamma testnet deployment uses ping.pub to deploy a browser; a
+  A temporary Fiamma testnet deployment uses ping.pub to deploy a browser; a
   dedicated browser for zkp verification is coming soon.
 ---
 

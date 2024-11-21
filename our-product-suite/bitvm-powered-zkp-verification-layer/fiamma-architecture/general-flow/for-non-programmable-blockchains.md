@@ -1,4 +1,4 @@
-# For Non-Programmable Blockchains :
+# For Non-Programmable Blockchains:
 
 <figure><img src="../../../../.gitbook/assets/whiteboard_exported_image (17).png" alt=""><figcaption><p>Fig2. The general flow of applications on Bitcoin</p></figcaption></figure>
 

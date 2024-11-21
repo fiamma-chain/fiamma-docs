@@ -13,8 +13,8 @@ Note! that the CLI here refers to transactions and queries in the fiamma verific
 The Fiamma Command Line Interface(CLI) provides essential commands to manage zero-knowledge proofs and staker accounts, streamlining interactions with the blockchain. Use the commands and options as described to perform operations effectively.
 
 Use CLI tools `fiammad` you can:
-- send **zkpverify transactions** with `tx zkpverify [command] [flags]` and queries with `query zkpverify [command] [flags]`.
-- send **bitvmstaker transactions** with `tx bitvmstaker [command] [flags]` and queries with `query bitvmstaker [command] [flags]`.
+- send **zkpverify transactions** with `tx zkpverify [command] [flags]` and queries with `query zkpverify [command] [flags]`
+- send **bitvmstaker transactions** with `tx bitvmstaker [command] [flags]` and queries with `query bitvmstaker [command] [flags]`
 
 Global Flags usually contains: `--from`, `--chain-id`, `--gas`, `--node`, `--keyring-backend`.
 
