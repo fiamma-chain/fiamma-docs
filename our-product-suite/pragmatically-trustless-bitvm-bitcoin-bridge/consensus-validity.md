@@ -1,8 +1,8 @@
 ---
 description: >-
-  It's an important module in BitVM2-based trustless bridge design. In this
+  It's an important module in BitVM2-based trust-minimized bridge. In this
   section, we will describe how to check the consensus validity on Bitcoin side.
-  It should be noted that design still being opti
+  The design is till being optimized.
 ---
 
 # Consensus Validity
@@ -14,7 +14,7 @@ A bridge typically enables asset transfers between two chains. In this discussio
 The process of moving from Bitcoin to a sidechain is referred to as PEG-IN; conversely, moving from a sidechain back to Bitcoin is called PEG-OUT. For PEG-IN, trust is placed in the sidechain, as critical modules operate there, including:
 
 1. Building a Bitcoin light client
-2. The wrapped BTC contract
+2. The wrapped/tokenized BTC contract
 3. Execution of the minting function
 
 For PEG-OUT, we rely on Bitcoin. However, limitations in Bitcoin's programmability prevent direct construction or execution of:
@@ -23,9 +23,13 @@ For PEG-OUT, we rely on Bitcoin. However, limitations in Bitcoin's programmabili
 2. Complex script logic to trigger transactions
 3. Data access to verify information validity, such as block header data
 
-Additionally, we aim to avoid introducing trust outside the Bitcoin network. Therefore, PEG-OUT processes are relatively complex. Below is the envisioned final version of the bridge design.
+Additionally, we aim to avoid introducing trust assumptions outside the Bitcoin network. Therefore, PEG-OUT processes are relatively complex. Below is the envisioned final version of the bridge design.
+
+<div data-full-width="true">
 
 <figure><img src="../../.gitbook/assets/bridge_overview.png" alt="" width="600"><figcaption></figcaption></figure>
+
+</div>
 
 For cross-chain transactions, two key aspects must be ensured:
 
@@ -34,7 +38,7 @@ For cross-chain transactions, two key aspects must be ensured:
 
 For PEG-IN, we use the following methods to ensure these properties
 
-1. Consensus validity: Construct a Bitcoin light client on the sidechain, which adheres to Bitcoin's block verification logic, ensuring block 2. validity
+1. Consensus validity: Construct a Bitcoin light client on the sidechain, which adheres to Bitcoin's block verification logic, ensuring block validity
 2. Execution validity: The minter provides an inclusion proof to ensure the PEG-IN transaction is contained within a valid block, confirming transaction validity
 
 To achieve bridge fungibility for PEG-OUT, we introduce an operator. The normal PEG-OUT process is:
@@ -56,10 +60,10 @@ Achieving execution validity is straightforward, as a transaction inclusion proo
 1. For POS chains, a block is valid if:
    1. The combined voting weight of current block signers exceeds 2/3 of total weight,
    2. A subset of signers for the current block are also signers of previous confirmed blocks, with a combined weight exceeding 1/3 of the current block's total weight,
-   3. Consistency checks between blocks are in place to prevent tampering when validator sets change by more than 2/3. For more details, refer to Succinctlabs' ZKTendermint.
+   3. Consistency checks between blocks are in place to prevent tampering when validator sets change by more than 2/3. For more details, refer to Succinctlabs' [ZKTendermint](https://github.com/succinctlabs/tendermintx?tab=readme-ov-file).
 2. For POW chains, a block is valid if:
    1. Blockhead validation: This includes verifying the hash, timestamp, and difficulty adjustment,
-   2. Longest-chain validation: Ensuring the block is part of the longest chain. See the ZK Bitcoin Light Client repository for more information.
+   2. Longest-chain validation: Ensuring the block is part of the longest chain. See the [ZK Bitcoin Light Client](https://github.com/keep-starknet-strange/raito) repository for more information.
 
 ## Chain Proof (Recursive Proof)
 
@@ -86,7 +90,7 @@ Solutions:
 
 2. K-depth confirmation: To ensure the verification of the longest chain, it is necessary to ensure that there are K blocks following a given block.This requires us to consistently make the current block and the information of the k-th block publicly available as public info for verification in scripts to check if a block has K confirmations (Check height\_k - height\_0 = k). (This is a requirement for the prover to set the information of the last K blocks as public input attributes.)
 
-<figure><img src="../../.gitbook/assets/chain proof_3.png" alt="" width="600"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/chain proof_3.png" alt="" width="600"><figcaption><p>Assume K=3</p></figcaption></figure>
 
 ## Proof Aggregation
 

@@ -38,6 +38,7 @@
     * [Roadmap](our-product-suite/bitvm-powered-zkp-verification-layer/roadmap.md)
   * [Fiamma Bridge (Pragmatically Trustless BitVM Bitcoin Bridge)](our-product-suite/pragmatically-trustless-bitvm-bitcoin-bridge/README.md)
     * [High-level Design of Fiamma Bridge](our-product-suite/pragmatically-trustless-bitvm-bitcoin-bridge/trustless-bridge-design.md)
+    * [Introduction](our-product-suite/pragmatically-trustless-bitvm-bitcoin-bridge/introduction.md)
     * [Consensus Validity](our-product-suite/pragmatically-trustless-bitvm-bitcoin-bridge/consensus-validity.md)
     * [Fungible Transfer](our-product-suite/pragmatically-trustless-bitvm-bitcoin-bridge/fungible-transfer.md)
     * [Fiamma Bridge Status](our-product-suite/pragmatically-trustless-bitvm-bitcoin-bridge/bridge-test.md)

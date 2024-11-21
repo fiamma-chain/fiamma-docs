@@ -2,7 +2,7 @@
 description: >-
   It's an important module in BitVM2-based trustless bridge design. In this
   section, we will describe how to support fungible transfer. It should be noted
-  that design still being optimized, so the conte
+  that design still being optimized.
 ---
 
 # Fungible Transfer

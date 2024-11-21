@@ -1,5 +1,5 @@
 ---
-description: Stay tuned ^_^
+description: Please stay tuned ^_^
 ---
 
 # User Guide
