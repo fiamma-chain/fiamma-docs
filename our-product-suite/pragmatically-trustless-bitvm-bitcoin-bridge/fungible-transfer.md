@@ -1,6 +1,6 @@
 ---
 description: >-
-  It's an important module in BitVM2-based trustless bridge design. In this section, we will describe how to support fungible tranfer.
+  It's an important module in BitVM2-based trustless bridge design. In this section, we will describe how to support fungible transfer.
 
   It should be noted that design still being optimized, so the content maybe change in the future.
 ---
