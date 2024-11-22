@@ -2,7 +2,7 @@
 
 Fiamma is poised to provide a cheap, timely, and secure verification service for any ZK application or scenario, laying the groundwork for mass blockchain adoption. The low barrier to entry for general nodes, coupled with sustainable and multiple rewards from various ZK use cases, is expected to attract a broader user base to the industry.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### **New Modularity Era Based on Fiamma**
 
