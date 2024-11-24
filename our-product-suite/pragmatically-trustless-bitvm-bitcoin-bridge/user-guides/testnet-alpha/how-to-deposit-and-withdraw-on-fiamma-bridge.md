@@ -46,9 +46,6 @@ Please note that we only support Native Segwit and Taproot address types in alph
 <figure><img src="../../../../.gitbook/assets/img_v3_02gs_8008e31e-44c7-430e-bfec-630e3b6746hu.jpg" alt=""><figcaption></figcaption></figure>
 
 6. It will then proceed with processing.
-
-<figure><img src="../../../../.gitbook/assets/img_v3_02gs_92e17cd5-60b8-4202-8ab8-296558b627hu.jpg" alt=""><figcaption></figcaption></figure>
-
 7. Check your deposit (Peg-in) status by clicking the deposit transaction. &#x20;
 
 <figure><img src="../../../../.gitbook/assets/2afc9d55-b064-4863-a096-9563fbfe869b.jpeg" alt=""><figcaption></figcaption></figure>
@@ -80,7 +77,7 @@ Please note that we only support Native Segwit and Taproot address types in alph
 
 3. Fill out the recipient address on Bitcoin.
 
-<figure><img src="../../../../.gitbook/assets/20241122-223739.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/20241124-164526.jpeg" alt=""><figcaption></figcaption></figure>
 
 4. Confirm and Withdraw
    1. Withdraw
@@ -92,9 +89,6 @@ b. Confirm Withdraw and Sign Burn Transaction
 <figure><img src="../../../../.gitbook/assets/img_v3_02gs_b3a1aa0b-667c-4a3e-98d8-ed617bc840hu.jpg" alt=""><figcaption></figcaption></figure>
 
 5. Processing.&#x20;
-
-<figure><img src="../../../../.gitbook/assets/img_v3_02gs_4e8c0ce0-f9c3-4921-bd17-e388c8056ahu.jpg" alt=""><figcaption></figcaption></figure>
-
 6. Check your PEG-OUT (withdraw) status in history.
 
 > This process may take 10-20 minutes to be confirmed on the Signet.
