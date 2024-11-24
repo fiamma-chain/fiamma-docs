@@ -72,7 +72,7 @@ Please note that we only support Native Segwit and Taproot address types in alph
 
 1. Connect EVM-compatible wallets (e.g., Metamask)
 
-<figure><img src="../../../../.gitbook/assets/20241122-223335 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/20241124-163845.jpeg" alt=""><figcaption></figcaption></figure>
 
 2. Select `PEG-OUT` Amount (We will bring in external liquidity provider to achieve fully flexible amount in the future.)
 
