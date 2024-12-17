@@ -55,5 +55,5 @@ $ fiammad version
 ```
 
 {% hint style="info" %}
-Note! he last command first executes `git checkout` in the specific version that you want to install. Ensure that you install the same version of the Fiamma executable as the one that is running on the network you aim to join.
+Note! the last command first executes `git checkout` in the specific version that you want to install. Ensure that you install the same version of the Fiamma executable as the one that is running on the network you aim to join.
 {% endhint %}

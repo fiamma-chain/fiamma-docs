@@ -138,7 +138,7 @@ request params:
 
 ### **get-bitvm-challenge-data**&#x20;
 
-Query bitVM chanllenge data stored in the fiamma by proof\_id.&#x20;
+Query bitVM challenge data stored in the fiamma by proof\_id.&#x20;
 
 request params:
 

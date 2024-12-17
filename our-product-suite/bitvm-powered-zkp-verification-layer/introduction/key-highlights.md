@@ -20,4 +20,4 @@ Designed to be blockchain-agnostic, Fiamma serves as a universal verification la
 
 ## **Extending the Functionality of Babylon**
 
-Our intersubjectivite node module and capability of verifying ZKP on Bitcoin network by fraud proof can help Babylon offer comprehensive and secure POS services. Currently, Babylon chain can only identify objectively attributable faults like double-sign on the blockchains. With us, Babylon can better unlock the cryptoeconomic security of the 21M BTC.
+Our intersubjective node module and capability of verifying ZKP on Bitcoin network by fraud proof can help Babylon offer comprehensive and secure POS services. Currently, Babylon chain can only identify objectively attributable faults like double-sign on the blockchains. With us, Babylon can better unlock the cryptoeconomic security of the 21M BTC.
