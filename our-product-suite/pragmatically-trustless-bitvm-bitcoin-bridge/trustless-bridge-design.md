@@ -39,7 +39,7 @@ To receive mamaBTC (tokenized BTC via Fiamma bridge)  on the sidechain, our syst
 1. **General Mode**: Users initiate BTC transfers back to Bitcoin. The system verifies transactions for legitimacy, preventing fraudulent claims by operators through challenge periods with zero-knowledge proof (ZKP) verifications.
 2. **Forced Exit Mode**: If the bridge or operator is down, users can withdraw BTC directly, with protections in place to penalize invalid claims.
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Key Features and Security Levels
 

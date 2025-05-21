@@ -79,7 +79,7 @@ Open the Keplr wallet extension and click the user avatar in the top right corne
 
 Use Recovery Phrase or Private Key to Import Keys into Keplr Wallet:
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption><p>import-private-key</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption><p>import-private-key</p></figcaption></figure>
 
 Set a custom name for your wallet, select "**Fiamma Testnet**" Chain and confirm. Your Fiamma address will now appear in the Keplr wallet extension, ready for receive and send transactions. For more faucet details, please refer to [Get FIA](wallet-and-tokens/#get-fia).
 
