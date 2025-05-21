@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # How to Deposit and Withdraw on Fiamma Bridge?
 
 Prerequisite

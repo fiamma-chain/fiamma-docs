@@ -1,5 +1,5 @@
-# Pragmatically Trustless BitVM Bitcoin Bridge
+# Fiamma Bridge (Trust-minimized Bitcoin Bridge, Powered by BitVM2)
 
-We are building Bitcoin bridges using the BitVM2 framework to connect diverse ecosystems to Bitcoin in a trustless and efficient manner. This enables securely minted, tokenized BTC backed directly by Bitcoin across multiple chains, including BTC Layer 2s, staking and restaking protocols, Ethereum, Solana, and more.
+We are building Bitcoin bridges using the BitVM2 framework to connect diverse ecosystems to Bitcoin in a trust-minimized and efficient manner. This enables securely minted, tokenized BTC backed directly by Bitcoin across multiple chains, including BTC Layer 2s, staking and restaking protocols, Ethereum, Solana, and more.
 
 Bitcoin, with trillions in value, largely remains inactive, despite numerous revenue opportunities across blockchain ecosystems, particularly within DeFi on Ethereum, Solana, and similar platforms. Existing cross-chain solutions for Bitcoin are often centralized and lack security, discouraging BTC holders from transferring assets for DeFi use. This hesitancy limits both liquidity and the broader utility of Bitcoin’s 21 million supply. Currently, only about 1.5% of BTC is bridged to other chains, underscoring the demand for trustless—or at least trust-minimized—cross-chain solutions to unlock Bitcoin’s full potential across the decentralized ecosystem.

@@ -4,7 +4,9 @@ description: This doc will explain how to install and run Fiamma Operator on Lin
 
 # Operator for Linux
 
-Overview: this doc will explain how to set up and run Fiamma Operator on Linux. To become an Operator, contact the Fiamma team to obtain an invite code `invite_code` to get started.**Key steps:**
+Overview: this doc will explain how to set up and run Fiamma Operator on Linux. To become an Operator, contact the Fiamma team to obtain an`invite_code`to get started.
+
+**Key steps:**
 
 1. [Install and set up the Fiamma Operator](1.-install-fiamma-operator.md)
 2. [Start and register](2.-start-and-register.md)
