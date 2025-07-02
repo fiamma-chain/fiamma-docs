@@ -2,6 +2,7 @@
 description: >-
   We are developing essential use cases built on our ZKP verification layer and
   leveraging BitVM2 to support and expand the growing Bitcoin ecosystem.
+hidden: true
 ---
 
 # Other Essential Protocols
@@ -14,7 +15,7 @@ Please see some high-level architecture of ZK-indexers and trust-minimized ZK br
 
 The [main problem](https://foresightnews.pro/article/detail/48043) with the BRC-20 Indexer is its centralized and isolated setup, requiring users to trust an off-chain indexer. Fiamma can enable a trustless, decentralized, and unified indexer, facilitating the growth of the BRC-20 market.
 
-<figure><img src="../.gitbook/assets/whiteboard_exported_image (14) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/whiteboard_exported_image (14) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### &#x20;**Current solutions without Fiamma:**
 
@@ -37,7 +38,7 @@ The [main problem](https://foresightnews.pro/article/detail/48043) with the BRC-
 
 We want this ZK-Bridge to be trust-minimized, ensuring the protocol's safety as long as at least one committee member is honest.
 
-<figure><img src="../.gitbook/assets/whiteboard_exported_image (16) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/whiteboard_exported_image (16) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The overall flow:
 

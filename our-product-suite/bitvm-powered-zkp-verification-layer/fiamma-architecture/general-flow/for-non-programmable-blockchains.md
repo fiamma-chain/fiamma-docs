@@ -1,6 +1,6 @@
-# For Non-Programmable Blockchains:
+# For Non-Programmable Blockchains :
 
-<figure><img src="../../../../.gitbook/assets/whiteboard_exported_image (17).png" alt=""><figcaption><p>Fig2. The general flow of applications on Bitcoin</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/whiteboard_exported_image (17) (1).png" alt=""><figcaption><p>Fig2. The general flow of applications on Bitcoin</p></figcaption></figure>
 
 #### Components Involved:
 
@@ -37,4 +37,3 @@
 * **Bitcoin Scripts:**
   * **Check Script Execution:** The scripts on Bitcoin perform checks on `DA Check` and `Sig Check` to verify the data and signatures.
   * **Final State Update:** Once the checks are successful, the final state is updated on the Bitcoin network.
-

@@ -1,3 +1,11 @@
 # Our Product Suite
 
-We are developing infrastructure including **Fiamma Bridge** (a trust-minimized Bitcoin bridge Powered by BitVM2), **Fiamma Layer** (a BitVM2-Based Settlement Layer). Alongside these, we’re developing additional tools and applications to enable seamless and unprecedented trust-minimized integration of BTC into everyday use. Please stay tuned!&#x20;
+At Fiamma, we're building the next-generation wealth management platform—combining the most trustless infrastructure with the most seamless user experience.
+
+Our flagship app, **Fiamma One**, is a non-custodial superapp that enables anyone to earn yield on BTC or stablecoins in just one click.
+
+**Bitcoin strategies** are powered by the **Fiamma Bridge**, a trust-minimized Bitcoin bridge built on BitVM2. We're already researching its evolution to BitVM3 for even greater trustlessness and efficiency.
+
+The future of BTC and on-chain wealth management is only beginning.
+
+**Stay tuned.**

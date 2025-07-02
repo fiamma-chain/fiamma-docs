@@ -1,16 +1,22 @@
 ---
 description: >-
-  We are building the future of finance and the internet on Bitcoin by
-  delivering the most trustless, efficient infrastructures and protocols
-  accessible to all.
+  We're reimagining finance and the internet from the ground up—centered on
+  Bitcoin, connected to all. Through radically trust-minimized infrastructure,
+  we’re unlocking open finance for everyone.
 ---
 
 # Overview
 
-Founded by seasoned ZK (zero-knowledge) developers, researchers, and strategists in fintech and crypto, we are the first to enable Bitcoin to verify ZKPs optimistically under the BitVM2 paradigm. We hold a deep conviction that ZK technology is the key to unlocking Bitcoin’s full potential.
+The traditional financial system is gated, and today’s monetary system is inherently inflationary. For billions of people, there has been little way out—until the emergence of permissionless, decentralized technologies. Blockchains sparked this shift, with **Bitcoin** leading the movement as the first and still most dominant crypto asset, now valued at over **$2 trillion**.
 
-One of the most powerful features of ZK technology is its ability to compress complex computations into small, constant-size proofs that can be easily verified on blockchains. This is the mechanism behind ZK-rollups, which help scale Ethereum. While Bitcoin remains the most valuable and secure blockchain, its limited programmability restricts it from supporting the broad range of applications found on other networks. Another crucial advantage of ZK technology is enabling trustless interoperability between blockchains.&#x20;
+Yet despite its scale, most BTC remains idle. Why? Because the Bitcoin blockchain lacks programmability, and the broader on-chain experience remains fragmented, inaccessible, and unintuitive.
 
-We are developing infrastructure including **Fiamma Bridge** (pragmatically trustless BitVM Bitcoin bridges), **Fiamma Layer** (a BitVM-Powered ZKP (Zero-Knowledge Proofs) Verification Layer), and additional foundational tools to support a thriving, diverse Bitcoin ecosystem.
+We are a team of cryptographers, blockchain developers, and fintech professionals pioneering **BitVM2**—the Bitcoin Virtual Machine—ushering in a new era of **trust-minimized Bitcoin infrastructure and cross-ecosystem bridges** built with **Bitcoin finality** for the first time.
 
-Our infrastructures empower BTC holders to earn trustless yields and explore limitless ecosystems like never before. We’re unlocking native, trustless access to Bitcoin’s immense liquidity for all ecosystems, creating unprecedented opportunities. Developers can now innovate freely on Bitcoin beyond EVM or SVM, shaping a future where Bitcoin serves as the foundation for boundless potential.
+We were the **first to enable Bitcoin to verify ZKPs optimistically** under BitVM2. This milestone lays the groundwork for the most trust-minimized foundation to bring BTC into broader DeFi, Web3, and real-world applications. We hold a deep conviction: **Zero-knowledge technology is the key to unlocking Bitcoin’s full potential.**
+
+After two rounds of testnet launches for our BitVM-powered bridge, it became clear that another frontier must be tackled: **user experience**—especially when striving for both **self-custody and trust minimization**.
+
+That’s why we will also launch **Fiamma One** soon, a non-custodial superapp delivering **one-click BTC earning**—a seamless, secure first step toward unlocking broader BTC use cases like **non-custodial lending, stablecoin and RWA strategies**, and more.
+
+This is only the beginning. We’re building the rails for the next chapter of finance—**rooted in Bitcoin, connected to all**.

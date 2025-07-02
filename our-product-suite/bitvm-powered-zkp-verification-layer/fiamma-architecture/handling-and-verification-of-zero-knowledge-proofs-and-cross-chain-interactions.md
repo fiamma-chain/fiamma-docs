@@ -8,7 +8,7 @@ description: >-
 
 
 
-<figure><img src="../../../.gitbook/assets/whiteboard_exported_image (18).png" alt=""><figcaption><p>Fig4. Sequence diagram for the Fiamma network</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/whiteboard_exported_image (18) (1).png" alt=""><figcaption><p>Fig4. Sequence diagram for the Fiamma network</p></figcaption></figure>
 
 ## Components
 

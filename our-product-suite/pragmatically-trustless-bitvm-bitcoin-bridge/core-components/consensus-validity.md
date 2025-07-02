@@ -5,13 +5,13 @@ description: >-
   The design is till being optimized.
 ---
 
-# Consensus Validity
+# Consensus Proof
 
 ## Introduction
 
-A bridge typically enables asset transfers between two chains. In this discussion, we focus on bridge designs between Bitcoin and a programmable sidechain (e.g., Ethereum, Solana, Babylon).
+A bridge typically enables asset transfers between two chains. In this discussion, we focus on bridge designs between Bitcoin and a programmable blockchain (e.g., Ethereum, Solana, etc.).
 
-The process of moving from Bitcoin to a sidechain is referred to as PEG-IN; conversely, moving from a sidechain back to Bitcoin is called PEG-OUT. For PEG-IN, trust is placed in the sidechain, as critical modules operate there, including:
+The process of moving from Bitcoin to another blockchain is referred to as PEG-IN; conversely, moving from the other blockchain back to Bitcoin is called PEG-OUT. For PEG-IN, trust is placed in the destination chain, as critical modules operate there, including:
 
 1. Building a Bitcoin light client
 2. The wrapped/tokenized BTC contract
@@ -19,17 +19,13 @@ The process of moving from Bitcoin to a sidechain is referred to as PEG-IN; conv
 
 For PEG-OUT, we rely on Bitcoin. However, limitations in Bitcoin's programmability prevent direct construction or execution of:
 
-1. A light client for the sidechain
+1. A light client for the other chain (we can also call the chain sidechain or side system of Bitcoin)&#x20;
 2. Complex script logic to trigger transactions
 3. Data access to verify information validity, such as block header data
 
 Additionally, we aim to avoid introducing trust assumptions outside the Bitcoin network. Therefore, PEG-OUT processes are relatively complex. Below is the envisioned final version of the bridge design.
 
-<div data-full-width="true">
-
-<figure><img src="../../.gitbook/assets/bridge_overview.png" alt="" width="600"><figcaption></figcaption></figure>
-
-</div>
+<div data-full-width="true"><figure><img src="../../../.gitbook/assets/bridge_overview.png" alt="" width="600"><figcaption></figcaption></figure></div>
 
 For cross-chain transactions, two key aspects must be ensured:
 
@@ -80,17 +76,17 @@ Recursive proofs possess excellent compression properties; the size of the proof
 1. The dynamic changes in scripts, leading to the transformation of taproot addresses;
 2. This implies more data is disclosed on Bitcoin, gradually increasing costs.
 
-<figure><img src="../../.gitbook/assets/chain proof_1.png" alt="" width="600"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/chain proof_1.png" alt="" width="563"><figcaption></figcaption></figure>
 
 Solutions:
 
 1. Increase hash circuits on the prover's side, using only the hash output as the public input. This ensures the proof size remains constant while also stabilizing the size of the public input.
 
-<figure><img src="../../.gitbook/assets/chain proof_2.png" alt="" width="600"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/chain proof_2.png" alt="" width="563"><figcaption></figcaption></figure>
 
 2. K-depth confirmation: To ensure the verification of the longest chain, it is necessary to ensure that there are K blocks following a given block.This requires us to consistently make the current block and the information of the k-th block publicly available as public info for verification in scripts to check if a block has K confirmations (Check height\_k - height\_0 = k). (This is a requirement for the prover to set the information of the last K blocks as public input attributes.)
 
-<figure><img src="../../.gitbook/assets/chain proof_3.png" alt="" width="600"><figcaption><p>Assume K=3</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/chain proof_3.png" alt="" width="563"><figcaption><p>Assume K=3</p></figcaption></figure>
 
 ## Proof Aggregation
 
