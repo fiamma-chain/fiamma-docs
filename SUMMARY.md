@@ -80,4 +80,5 @@
       * [Supported ProofSystem](our-product-suite/bitvm-powered-zkp-verification-layer/developer-guides/supported-proofsystem.md)
     * [Roadmap](our-product-suite/bitvm-powered-zkp-verification-layer/roadmap.md)
   * [Other Essential Protocols](our-product-suite/other-essential-protocols.md)
+  * [Fiamma One](our-product-suite/fiamma-one.md)
 * [Support](support.md)
