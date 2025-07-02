@@ -78,7 +78,7 @@ When you submit a proof, you will receive a transaction hash. Typically, if the 
 fiammad query tx 65C110AE8E0624AC34CC1F7E36E253B3437B28E008433AE499DEF40D770A1915 --node https://testnet-rpc.fiammachain.io
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>SubmitProof event</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption><p>SubmitProof event</p></figcaption></figure>
 
 * **Get Proof Id by Manual/Code Calculation**
 

@@ -50,6 +50,8 @@ What Is _Isolated Safe Architecture_?
 
 > **Every user’s funds are stored in their own personal “safe”**, co-controlled by **the user + the bridge committee**.
 
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
 This means:
 
 * Each user’s assets are **logically and cryptographically separated**
@@ -58,8 +60,6 @@ This means:
 * To steal all bridge assets, an attacker must breach **every user** + **every committee key** — a practical impossibility
 
 That’s why we call it a _“Safe”_ — because no one else can get inside **your vault**.
-
-<div align="center"><figure><img src="../../../.gitbook/assets/whiteboard_exported_image (12).png" alt="" width="563"><figcaption><p>Hack-Resistant Bridge: ISA-Based</p></figcaption></figure></div>
 
 We realized the real fix isn’t just “harder locks. It’s making sure **there’s no single vault to drain in the first place**. Fiamma Bridge is fundamentally different from traditional multisig bridges.
 
