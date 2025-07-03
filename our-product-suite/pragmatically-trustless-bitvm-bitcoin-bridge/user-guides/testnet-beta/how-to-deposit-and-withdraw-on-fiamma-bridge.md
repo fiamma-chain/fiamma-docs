@@ -61,8 +61,10 @@ Please note that we only support Native Segwit and Taproot address types in beta
    1.  Import FiaBTC token for each destination chain. Enter the token contract address for each chain:
 
        1. Ethereum Holesky: `0xD32B4fB574a3cCEB3576350D8A0e9011507F79d2`
-       2. &#x20;Monad Testnet: `0x859fb36f3Fe7e22b37dd99b501f891377DdC9c33`
-       3. Plume Testnet: `0xd922BB00C0f7F555655e7c9e38D70E5636e6C615`
+       2. BSC Testnet: `0x44F28b1dF5dE81D934272229498959A95d6a6264`
+       3. Monad Testnet: `0x859fb36f3Fe7e22b37dd99b501f891377DdC9c33`
+       4. Pharos Testnet: `0x40e75eF8Ea38A1e1362edD88234D327e14533992`
+       5. Plume Testnet: `0xd922BB00C0f7F555655e7c9e38D70E5636e6C615`
 
        &#x20;
 
