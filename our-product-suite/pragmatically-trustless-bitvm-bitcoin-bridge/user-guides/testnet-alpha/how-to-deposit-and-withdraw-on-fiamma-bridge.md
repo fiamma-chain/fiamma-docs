@@ -35,7 +35,7 @@ Please note that we only support Native Segwit and Taproot address types in alph
 
 3. Please enter the recipient's address in the designated field, ensuring it is an ERC20-compatible address from the Holesky network.
 
-> Or just conneting with the Metamask, which will autofill the address.
+> Or just connecting with the Metamask, which will autofill the address.
 
 <figure><img src="../../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 

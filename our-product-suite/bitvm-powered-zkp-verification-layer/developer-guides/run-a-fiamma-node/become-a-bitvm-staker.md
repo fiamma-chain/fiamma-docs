@@ -34,4 +34,4 @@ You have submitted your registration application.
 The registration number is 6, please wait patiently.
 ```
 
-wait the Bitcoin transaction is confimed, we have successfully register validator\_key as BitVM staker.
+wait the Bitcoin transaction is confirmed, we have successfully register validator\_key as BitVM staker.
