@@ -1,11 +1,11 @@
 ---
 description: >-
   It's an important module in BitVM2-based trustless bridge design. In this
-  section, we will describe how to support fungible transfer. It should be noted
-  that design still being optimized.
+  section, we will describe how to support fungible withdrawal. It should be
+  noted that the design still being optimized.
 ---
 
-# Fungible Transfer
+# Fungible Withdrawal
 
 ## Overall flow
 

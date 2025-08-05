@@ -3,6 +3,7 @@ description: >-
   It's an important module in BitVM2-based trust-minimized bridge. In this
   section, we will describe how to check the consensus validity on Bitcoin side.
   The design is till being optimized.
+hidden: true
 ---
 
 # Consensus Proof
