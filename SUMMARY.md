@@ -86,4 +86,6 @@
     * [Roadmap](our-product-suite/bitvm-powered-zkp-verification-layer/roadmap.md)
   * [Other Essential Protocols](our-product-suite/other-essential-protocols.md)
   * [Fiamma One](our-product-suite/fiamma-one.md)
+  * [Smart Contract Addresses](our-product-suite/smart-contract-addresses.md)
+* [Terms of Service](terms-of-service.md)
 * [Support](support.md)
