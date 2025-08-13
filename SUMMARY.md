@@ -88,4 +88,5 @@
   * [Fiamma One](our-product-suite/fiamma-one.md)
   * [Smart Contract Addresses](our-product-suite/smart-contract-addresses.md)
 * [Terms of Service](terms-of-service.md)
+* [Privacy Policy](privacy-policy.md)
 * [Support](support.md)
