@@ -50,7 +50,7 @@ What Is _Isolated Safe Architecture_?
 
 > **Every user’s funds are stored in their own personal “safe”**, co-controlled by **the user + the bridge committee**.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This means:
 

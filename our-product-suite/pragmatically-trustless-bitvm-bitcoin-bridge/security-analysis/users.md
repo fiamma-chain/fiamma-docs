@@ -36,16 +36,16 @@ Take bridging to Ethereum as an example:
 
 * Fiamma’s bridge smart contract consists of two parts:
   1. **Bitcoin Light Client Contract** (verifies BTC transactions).
-  2. **FiaBTC Contract** (mints 1:1 pegged wrapped BTC, i.e., FiaBTC).
-* The `mint` function in FiaBTC is designed for permissionless execution—**anyone can mint FiaBTC by submitting valid proof** (e.g., a Merkle proof of their BTC deposit).
+  2. FIABTC **Contract** (mints 1:1 pegged wrapped BTC).
+* The `mint` function in FIABTC is designed for permissionless execution—**anyone can mint FIABTC by submitting valid proof** (e.g., a Merkle proof of their BTC deposit).
 
 **Implementation Roadmap:**
 
 * **Phase 1 (Initial):**
-  * The `mint` function is guarded by an **Owner**, who must verify and submit a valid Bitcoin transaction to mint FiaBTC.
-  * Users rely on the Owner’s **liveness** but are protected from arbitrary minting (the Owner cannot inflate FiaBTC supply).
+  * The `mint` function is guarded by an **Owner**, who must verify and submit a valid Bitcoin transaction to mint FIABTC.
+  * Users rely on the Owner’s **liveness** but are protected from arbitrary minting (the Owner cannot inflate FIABTC supply).
 * **Phase 2 (Permissionless):**
-  * Users can **self-submit Bitcoin transaction proofs** to mint FiaBTC **without trusting any third party.**
+  * Users can **self-submit Bitcoin transaction proofs** to mint FIABTC **without trusting any third party.**
   * This method is more secure but requires extra user effort (e.g., signing and submitting mint transactions).
 * **Hybrid Approach:**
   * Fiamma will **combine both methods**: Users can either wait for the Owner or **trigger minting themselves if the Owner is unresponsive.**

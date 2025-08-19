@@ -2,7 +2,7 @@
 
 The vision of **Fiamma Bridge** is to build the most secure bridge, enabling BTC users to thrive across every corner of the blockchain world. We aim to achieve this vision through a sufficiently decentralized design, as illustrated in the architecture diagram below.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Bridge Architecture</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption><p>Bridge Architecture</p></figcaption></figure>
 
 #### **Bitcoin Model**
 

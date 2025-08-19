@@ -65,12 +65,13 @@ The following diagram illustrates how we address these requirements.
 
 <figure><img src="../../../.gitbook/assets/whiteboard_exported_image (16).png" alt="" width="563"><figcaption></figcaption></figure>
 
-* Firstly, the user burns FiaBTC on Ethereum and specifies both the receiver address and the operator.
-* Secondly, the bridge sends this request to the specified operator.
-* The operator checks the request in two ways:
-  * Automated method: When the amount is small, the operator's program handles the checking process automatically; if there is an error, the program refuses to handle it.
-  * Manual method: When the amount exceeds a threshold value, the operator needs to check the request manually and click the continue button if it is valid.
+1. User burns FIABTC on Ethereum and specifies both the receiver address and the operator.
+2. The bridge sends this request to the specified operator.
+3. The operator program handles the checking process automatically. If there is an error, the program refuses to handle it.
+
 * By adopting this approach, the operator doesn't need to trust anything but themselves.
+
+
 
 **Claim process**
 
@@ -86,7 +87,7 @@ Now, we can state that the sole requirement for reclaiming BTC is that an honest
 <figure><img src="../../../.gitbook/assets/whiteboard_exported_image (17).png" alt="" width="563"><figcaption></figcaption></figure>
 
 1. After the operator successfully pays the user, the operator generates proof to confirm completion of the payment process.
-2. The operator stores the proof in the claim transaction, initiating the challenge period. We set this challenge period to 1 hour because our design ensures sufficient active challengers (a significant improvement over traditional solutions).
+2. The operator stores the proof in the claim transaction, initiating the challenge period. We set this challenge period to 6 block time because our design ensures sufficient active challengers (a significant improvement over traditional solutions).
 3. Since the proof is completely valid, no challenger raises a challenge, allowing the operator to reclaim the BTC after the challenge period expires.\
 
 
@@ -95,8 +96,8 @@ Now, we can state that the sole requirement for reclaiming BTC is that an honest
 <figure><img src="../../../.gitbook/assets/whiteboard_exported_image (18).png" alt="" width="563"><figcaption></figcaption></figure>
 
 1. After the operator successfully pays the user, the operator generates proof showing completion of the payment process.
-2. The operator stores the proof in the claim transaction, starting the challenge period. We set this period to 6 hours because our design ensures sufficient active challengers (a significant improvement over traditional solutions).
-3. A dishonest challenger attempts to raise a challenge to block the operator from reclaiming BTC. However, since the operator is honest and the challenger cannot provide evidence of malicious activity, the challenge fails.
+2. The operator stores the proof in the claim transaction, starting the challenge period. We set this period to  6 block time because our design ensures sufficient active challengers (a significant improvement over traditional solutions).
+3. A **dishonest challenger** attempts to raise a challenge to block the operator from reclaiming BTC. However, since the operator is honest and the challenger cannot provide evidence of malicious activity, **the challenge fails**.
 4. The operator submits the Assert transaction to respond to the challenge.
 5. After a shorter challenge period, the operator submits the unhappy take transaction to reclaim BTC.
 
@@ -120,7 +121,7 @@ In summary, during the withdrawal phase, the operator will:
 
 ## Setup Phase
 
-In the setup phase, the operator only needs to stake 1 BTC as collateral in a taproot address. This taproot address has 2 spend paths:
+In the setup phase, the operator only needs to stake 0.1 BTC as collateral in a taproot address. This taproot address has 2 spend paths:
 
 1. operator\_pk + hash timelock: 100% controlled by the operator, but with a timelock, meaning that when the timelock expires, the operator can spend it permissionlessly
 2. operator\_pk + committee: pre-signed with the disprove tx. This ensures that when the operator is malicious, the collateral will be slashed permissionlessly

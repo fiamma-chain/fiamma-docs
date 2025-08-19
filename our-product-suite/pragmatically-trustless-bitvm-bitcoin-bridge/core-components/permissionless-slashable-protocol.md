@@ -16,7 +16,7 @@ We have built a **comprehensive mechanism** to detect and penalize operator misc
 
 At the same time, we protect **honest operators**. If the operator acts honestly, they will always receive their BTC. To achieve this, we also implement a **permissionless slashing mechanism for challengers**:
 
-* If a challenger **maliciously leaks the secret value `s_i`**, their collateral is slashed permissionlessly on the destination chain (typically in fiaBTC).
+* If a challenger **maliciously leaks the secret value `s_i`**, their collateral is slashed permissionlessly on the destination chain (typically in FIABTC).
 * The bridge committee will then **transfer the BTC to the honest operator**.
 
 This ensures that challengers gain **nothing** from:

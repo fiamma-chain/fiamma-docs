@@ -10,13 +10,13 @@ To achieve this, we’ve designed the permissionless challenger system with thre
 
 * **Easy to Run**: We provide a user-friendly challenger frontend for seamless operation. For details, refer to the [Challenger Guide](../user-guides/testnet-beta/how-to-run-a-challenger.md).
 * **Low Capital Requirements**:
-  * **Collateral**: Only **0.0001 sBTC** (current testnet requirement).
-  * **Challenge Cost**: At most **0.001 sBTC** per challenge.
+  * **Collateral**: Only **0.0001 BTC**.
+  * **Challenge Cost**: At most **0.001 BTC** per challenge.
 
 **2. Incentives**
 
 * **Regular Rewards**: Challengers earn rewards for verifying each proof submitted by operators.
-* **High Stakes Rewards**: If a challenger successfully identifies and slashes a malicious operator, they can earn up to **1 sBTC**.
+* **High Stakes Rewards**: If a challenger successfully identifies and slashes a malicious operator, they can earn up to $**1,000**.
 
 By combining low entry barriers with strong incentives, we foster a robust and decentralized challenger network, ensuring the highest level of security for users.
 
