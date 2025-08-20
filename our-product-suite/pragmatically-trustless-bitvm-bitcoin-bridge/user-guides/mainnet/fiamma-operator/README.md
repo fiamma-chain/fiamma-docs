@@ -35,5 +35,5 @@ This guide explains the setup, operating and maintenance of Fiamma Operator for 
 **See the tutorials below on running Fiamma Operator:**
 
 1. [Install Operator](1.-install-operator/)
-2. [Run Operator](2.-start-operator/)
+2. [Start Operator](2.-start-operator/)
 3. [Maintenance](3.-maintenance/)
