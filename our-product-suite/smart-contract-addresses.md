@@ -45,3 +45,7 @@ Fiamma Bridge and Fiamma BTC are deployed on multiple chains.
 ## Plume
 
 <table><thead><tr><th>Contract Name</th><th width="424.47216796875">Contract Address</th><th>Deploy Date</th></tr></thead><tbody><tr><td>Fiamma Bridge</td><td>0xCFA380e51AB0DBCC1Bea7D902f11A2E36325E1F7</td><td>2025-08-05</td></tr><tr><td>Fiamma BTC</td><td>0x60C230c38aF6d86b0277a98a1CAeAA345a7B061F</td><td>2025-08-05</td></tr></tbody></table>
+
+## HyperEVM
+
+<table><thead><tr><th>Contract Name</th><th width="424.47216796875">Contract Address</th><th>Deploy Date</th></tr></thead><tbody><tr><td>Fiamma Bridge</td><td>0x62C737Ba25B8CE3b2d6650a1Dc44fE75e981B939</td><td>2025-08-12</td></tr><tr><td>Fiamma BTC</td><td>0x0CEDa114F533D540c8aF2AeB52942c1a4A0B1e86</td><td>2025-08-12</td></tr></tbody></table>
