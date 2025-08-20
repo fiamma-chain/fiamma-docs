@@ -1,6 +1,6 @@
 # Fiamma Operator
 
-This guide covers the setup and maintenance of Fiamma Operator for Linux on mainnet.
+This guide explains the setup, operating and maintenance of Fiamma Operator for Linux on mainnet.
 
 ### **System Requirements**
 
