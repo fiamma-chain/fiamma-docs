@@ -1,6 +1,6 @@
 # Mainnet
 
-Click below to view the tutorials for mainnet:
+This section contains tutorials for mainnet:
 
 1. Fiamma Bridge
 2. Fiamma Challenger
