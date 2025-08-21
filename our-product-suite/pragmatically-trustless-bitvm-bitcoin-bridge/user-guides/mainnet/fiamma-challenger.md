@@ -36,9 +36,9 @@ If an operator acted maliciously (e.g., tried to steal user's funds by submittin
 
 <figure><img src="../../../../.gitbook/assets/截屏2025-05-22 00.45.34.png" alt=""><figcaption></figcaption></figure>
 
-2. Click one of the challenges to see the details. Each challenge task has three stages. You may be assigned to any one of them, while the other two can be completed by different challengers. Click "Submit Challenge" to submit this challenge to the bridge.
+2. Click one of the challenges to see the details. Each challenge task has two stages. You may be assigned to any one of them, while the other one can be completed by different challengers. Click "Submit Challenge" to submit this challenge to the bridge.
 
-<figure><img src="../../../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Screenshot 2025-08-21 at 20.37.56.png" alt=""><figcaption></figcaption></figure>
 
 Once successfully submitted, you will see a Submit Challenge Success notification on the top right.
 
