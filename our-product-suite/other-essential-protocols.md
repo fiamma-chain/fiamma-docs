@@ -25,7 +25,7 @@ The [main problem](https://foresightnews.pro/article/detail/48043) with the BRC-
 ### **Solution-1 with Fiamma (ZKIndexer):**
 
 1. Secured by Bitcoin - By integrating the Fiamma, the value of the BRC-20 token is secured by Bitcoin via Babylon and BitVM2;
-2. Separated ledger - different projects may operate different indexers, causing token loss;
+2. Separated ledger - different projects may operate different indexers, causing the token value loss;
 3. Secured by Bitcoin - By integrating the Fiamma, the value of the BRC-20 token is secured by Bitcoin via Babylon and BitVM2;
 4. Unified ledger - the same ledger, the same value;
 
