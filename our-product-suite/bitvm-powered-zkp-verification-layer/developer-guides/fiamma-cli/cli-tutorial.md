@@ -121,7 +121,7 @@ fiammad tx zkpverify submit-community-verification \
   <result>
 ```
 
-**Example** You may use the above shell to calculate a proof id, and use fiammad command to sumbit community verification with a verification result.
+**Example** You may use the above shell to calculate a proof id, and use fiammad command to submit community verification with a verification result.
 
 ```bash
 fiammad tx zkpverify submit-community-verification \
@@ -160,9 +160,9 @@ fiammad query zkpverify get-proof-data \
   1776686b821785672155f4f34a0cf0d088e721e3ec5ff32709a7cec1b5a3b669
 ```
 
-### 5. Get bitvm chanllenge data by proof id from Fiamma network
+### 5. Get bitvm challenge data by proof id from Fiamma network
 
-You can query bitVM chanllenge data stored in the fiamma network by proof id.
+You can query bitVM challenge data stored in the fiamma network by proof id.
 
 ```bash
 fiammad query zkpverify get-bitvm-challenge-data \

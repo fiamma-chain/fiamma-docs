@@ -18,7 +18,7 @@ The Fiamma RPC interface includes basic query interfaces for the Tendermint cons
 | ------------------- | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | **Fiamma Rest API** | Query or send Fiamma transactions using an HTTP restful API                                                            | [https://testnet-api.fiammachain.io/](https://testnet-api.fiammachain.io/) |
 | **Fiamma RPC**      | Query transactions, blocks, consensus state, broadcast transactions, etc.                                              | [https://testnet-rpc.fiammachain.io/](https://testnet-rpc.fiammachain.io/) |
-| **FIamma GRPC**     | Using a predefined proto data structure, grpc requests can be sent to the fiamma network for transactions and queries. | [testnet-grpc.fiammachain.io:443](https://testnet-grpc.fiammachain.io)     |
+| **Fiamma GRPC**     | Using a predefined proto data structure, grpc requests can be sent to the fiamma network for transactions and queries. | [testnet-grpc.fiammachain.io:443](https://testnet-grpc.fiammachain.io)     |
 
 ## Rest API  Info
 
