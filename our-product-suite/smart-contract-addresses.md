@@ -26,10 +26,6 @@ Fiamma Bridge and Fiamma BTC are deployed on multiple chains.
 
 <table><thead><tr><th>Contract Name</th><th width="424.1072998046875">Contract Address</th><th>Deploy Date</th></tr></thead><tbody><tr><td>Fiamma Bridge</td><td>0xCFA380e51AB0DBCC1Bea7D902f11A2E36325E1F7</td><td>2025-08-05</td></tr><tr><td>Fiamma BTC</td><td>0x60C230c38aF6d86b0277a98a1CAeAA345a7B061F</td><td>2025-08-05</td></tr></tbody></table>
 
-## ZKSync
-
-<table><thead><tr><th>Contract Name</th><th width="424.47216796875">Contract Address</th><th>Deploy Date</th></tr></thead><tbody><tr><td>Fiamma Bridge</td><td>0xCFA380e51AB0DBCC1Bea7D902f11A2E36325E1F7</td><td>2025-08-05</td></tr><tr><td>Fiamma BTC</td><td>0x60C230c38aF6d86b0277a98a1CAeAA345a7B061F</td><td>2025-08-05</td></tr></tbody></table>
-
 ## Polygon
 
 <table><thead><tr><th>Contract Name</th><th width="428.2901611328125">Contract Address</th><th>Deploy Date</th></tr></thead><tbody><tr><td>Fiamma Bridge</td><td>0xCFA380e51AB0DBCC1Bea7D902f11A2E36325E1F7</td><td>2025-08-05</td></tr><tr><td>Fiamma BTC</td><td>0x60C230c38aF6d86b0277a98a1CAeAA345a7B061F</td><td>2025-08-05</td></tr></tbody></table>
